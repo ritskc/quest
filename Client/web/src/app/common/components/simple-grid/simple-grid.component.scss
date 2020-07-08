@@ -1,0 +1,57 @@
+.standard-top-left {
+    margin-left: 20px;
+}
+
+.clickable {
+    color: #1A8EB7;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+}
+
+.descending-order-icon {
+    margin-left: -6px;
+}
+
+table, button, input {
+    font-size: smaller;
+}
+
+.min-width {
+    width: 100px;
+}
+
+.overflow-x {
+    overflow-x: scroll;
+}
+
+.center-aling, .center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.column-width-50 {
+    width: 50px;
+}
+
+.column-width-100 {
+    width: 100px;
+}
+
+.column-width-150 {
+    width: 150px;
+}
+
+.column-width-200 {
+    width: 200px;
+}

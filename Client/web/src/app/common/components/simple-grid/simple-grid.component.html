@@ -1,0 +1,110 @@
+<div class="row">
+    <div class="col-md-12 col-xs-12 col-lg-12">
+      <div class="card">
+          <div class="card-header" *ngIf="headerRequired">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <button *ngIf="addRequired" (click)="addClicked()" class="btn btn-primary">
+                  <span class="fa fa-plus-circle"></span> Add
+                </button>
+                <button *ngIf="exportRequired" (click)="export()" class="btn btn-primary">
+                  <span class="fa fa-share"></span> Export
+                </button>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="input-group">
+                    <input class="form-control" type="text" [(ngModel)]="searchText" (ngModelChange)="dataChanges()" placeholder="Search by entering your text here">
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                      <i class="fa fa-search"></i>
+                      </span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <table class="table table-responsive-sm table-bordered table-striped table-sm">
+              <thead>
+                <tr>
+                  <th class="center-aling" *ngFor="let column of columns" (click)="toggleSort(column)" [ngClass]="{'min-width': column.minWidth}">
+                    <span>{{column.headerText}}</span>
+                    <div class="pull-right">
+                      <div *ngIf="column.sortable && (isNotSortedOnThisColumn(column.value) || !descendingOrderSelected(column.value))" class="fa fa-sort-asc"></div>
+                      <div *ngIf="column.sortable && (isNotSortedOnThisColumn(column.value) || descendingOrderSelected(column.value))" class="fa fa-sort-desc" [ngClass]="{'descending-order-icon': isNotSortedOnThisColumn(column.value)}"></div>  
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-template ngFor let-row [ngForOf]="_data | search: searchText | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                  <tr>
+                    <td *ngFor="let item of columns" [ngClass]="item.customStyling">
+                      <span *ngIf="!item.isLink && !item.nested && !item.isDate && !item.isEditable && !item.isBoolean && !item.hasAdditionalAction && !item.isEditableDate">{{row[item.value]}}</span>
+                      <span *ngIf="item.constantText && !item.isLink">{{item.constantText}}</span>
+                      <span *ngIf="item.isDate">{{row[item.value] | date}}</span>
+                      <span class="clickable" *ngIf="item.constantText && item.isLink">{{item.constantText}}</span>
+                      <span class="clickable" (click)="rowSelected(row)" *ngIf="item.isLink">{{row[item.value]}}</span>
+                      <span *ngIf="item.nested">{{row[item.value][item.nested]}}</span>
+                      <span *ngIf="item.hasAdditionalAction">{{row[item.value]}} 
+                        <span style="color: #0B8599;" class="fa fa-info-circle" (click)="additionalEventEmitted(item.additionalActionName, row)"></span>
+                      </span>
+                      <span *ngIf="item.isEditable">
+                        <input type="text" style="text-align: right; width: 90%;" value="{{row[item.value]}}" (change)="itemValueEdited($event, row, item)"/>
+                      </span>
+                      <span *ngIf="item.isEditableDate">
+                        <input type="text" style="text-align: right; width: 60px;" [ngModel]="row[item.value] | date: 'MM/dd/yyyy'" (blur)="row[item.value]=transformDate($event.target.value)"/>
+                      </span>
+                      <span *ngIf="item.isBoolean">
+                        <input type="checkbox" [checked]="row[item.value]" (change)="checkboxChanged(row, item, row[item.value])" [attr.disabled]="item.isDisabled? '': null"/>
+                      </span>
+                      <div *ngIf="item.isActionColumn" class="center">
+                        <span *ngFor="let action of item.actions">
+                          <button *ngIf="action.condition(row) == true" class="btn {{action.actionStyle}}" (click)="actionButtonClicked(action.event, row)">{{action.actionText}}
+                            <i *ngIf="action.icon" class="{{action.icon}}"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </ng-template>
+              </tbody>
+              <tfoot *ngIf="_data.length == 0">
+                <tr>
+                  <td colspan="999999" style="text-align: center;">
+                    No records to display
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="row" *ngIf="footerRequired">
+            <div class="col-lg-9 col-md-9 col-sm-9 overflow-x">
+              <ul class="pagination standard-top-left">
+                <li class="page-item">
+                  <a class="page-link" (click)="setPageNo(1)">First</a>
+                </li>
+                <li class="page-item" *ngFor="let item of pages | paginate: {args: _data}" [ngClass]="{ 'active': item == page } ">
+                  <a class="page-link" (click)="setPageNo(item)">{{item}}</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" (click)="setPageNo(pageNo)">Last</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 float-right">
+                <div class="input-group">
+                  <select class="form-control" [(ngModel)]="pageSize" (change)="pageSizeSelected()">
+                    <option [ngValue]="5">5 items</option>
+                    <option [ngValue]="10">10 items</option>
+                    <option [ngValue]="20">20 items</option>
+                    <option [ngValue]="30">30 items</option>
+                    <option [ngValue]="40">40 items</option>
+                    <option [ngValue]="50">50 items</option>
+                  </select>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>

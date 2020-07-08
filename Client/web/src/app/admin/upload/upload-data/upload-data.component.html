@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">
+      <select class="form-control pull-left" [(ngModel)]="selectedOption">
+        <option value="-1">Select data type to upload</option>
+        <option value="1">Part Opening Quantity</option>
+      </select>
+      <input type="file" class="btn btn-primary" (change)="readData($event.target.files)" id="supplierFile" style="margin-left: 15px; float: left;"/>
+      <div style="margin-left: 25px; padding-top: 7px; float: right;">
+        <input class="form-check-input" type="checkbox" id="filterInvalidItems" (change)="filterInvalidItemsEvent($event)" [(ngModel)]="filterInvalidItems">
+        <label class="form-check-label" for="filterInvalidItems">
+          Filter Invalid Items
+        </label>
+      </div>
+  </div>
+
+  <div class="card-body">
+    <simple-grid [addRequired]="false" [exportRequired]="false" [data]="dataToDisplay" [columns]="columns" ></simple-grid>
+  </div>
+
+  <div class="card-footer">
+    <button style="margin-left: 15px;" class="btn btn-primary pull-right" *ngIf='dataValidated' (click)="uploadBulkData()">Upload Data</button>
+    <button style="margin-left: 15px;" class="btn btn-primary pull-right" (click)="validateData()">Validate</button>
+  </div>
+</div>
+
+<loader></loader>
