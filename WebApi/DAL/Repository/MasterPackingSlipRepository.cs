@@ -615,7 +615,7 @@ namespace DAL.Repository
                 {
                     foreach (PackingSlipBoxDetails packingSlipBox in packingSlipDetails.PackingSlipBoxDetails)
                     {
-                        var part = await partRepository.GetPartAsync(packingSlipBox.PartId);
+                        var part = await partRepository.GetPartAsync(packingSlipBox.PartId, pSlip.WarehouseId);
 
                         var packingboxestatus = new PackingSlipScanBoxeStatus();
                         packingboxestatus.Id = packingSlipBox.Id;

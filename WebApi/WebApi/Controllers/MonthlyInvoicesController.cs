@@ -21,15 +21,15 @@ namespace WebApi.Controllers
         }
 
         // GET: api/Todo
-        [HttpGet("{companyId}")]
-        public async Task<ActionResult<IEnumerable<PackingSlip>>> GetPackingSlips(int companyId)
+        [HttpGet("{companyId}/{warehouseId}")]
+        public async Task<ActionResult<IEnumerable<PackingSlip>>> GetPackingSlips(int companyId, int warehouseId)
         {
             try
             {
                 var claimsIdentity = this.User.Identity as ClaimsIdentity;
                 int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
 
-                var result = await this.packingSlipService.GetAllPackingSlipsAsync(companyId, userId);
+                var result = await this.packingSlipService.GetAllPackingSlipsAsync(companyId,warehouseId, userId);
 
                 if (result == null)
                 {

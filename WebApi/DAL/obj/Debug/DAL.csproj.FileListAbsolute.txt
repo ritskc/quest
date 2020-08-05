@@ -115,8 +115,8 @@ C:\Ritesh\Projects\Quest\quest\WebApi\DAL\bin\Debug\DAL.dll.config
 C:\Ritesh\Projects\Quest\quest\WebApi\DAL\bin\Debug\DAL.dll
 C:\Ritesh\Projects\Quest\quest\WebApi\DAL\bin\Debug\DAL.pdb
 C:\Ritesh\Projects\Quest\quest\WebApi\DAL\bin\Debug\Newtonsoft.Json.dll
-C:\Ritesh\Projects\Quest\quest\WebApi\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 C:\Ritesh\Projects\Quest\quest\WebApi\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Ritesh\Projects\Quest\quest\WebApi\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Ritesh\Projects\Quest\quest\WebApi\DAL\obj\Debug\DAL.dll
 C:\Ritesh\Projects\Quest\quest\WebApi\DAL\obj\Debug\DAL.pdb
+C:\Ritesh\Projects\Quest\quest\WebApi\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

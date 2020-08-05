@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "6349297c-7782-4837-ba7f-6633b412c619",
+		"name": "Parts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44390/parts/",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Intuit_IAM_Authentication intuit_appid=Intuit.delivery.releasemanagementservice,intuit_app_secret=preprdnq72WEqnwebdIjuUixzdq0ekpLMIvr2Hfa",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE1OTY2NDEzNzIsImV4cCI6MTU5NzI0NjE3MiwiaWF0IjoxNTk2NjQxMzcyfQ.z5wBgJKCRKOCC13ZBM9EzckCBP_gSWVVVz2oAP7PFek",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 888,\r\n    \"code\": \"KY5302AK12\",\r\n    \"description\": \"SAMPLES FOR S5302AKX11\",\r\n    \"categoryId\": 1,\r\n    \"category\": \"General\",\r\n    \"unitId\": 1,\r\n    \"unit\": \"Pcs\",\r\n    \"companyId\": 1,\r\n    \"warehouseId\": 1,\r\n    \"minQty\": 10,\r\n    \"maxQty\": 100,\r\n    \"openingQty\": 25,\r\n    \"isActive\": true,\r\n    \"location\": \"North West\",\r\n    \"intransitQty\": 10,\r\n    \"qtyInHand\": 20,\r\n    \"supplierPrice\": 5.0000,\r\n    \"customerPrice\": 10.0000,\r\n    \"sku\": \"123456\",\r\n    \"isSurcharge\": true,\r\n    \"surchargePercentage\": 0.10,\r\n    \"surchargeAmount\": 1.10\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44390/parts/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"parts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44390/parts/1/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Intuit_IAM_Authentication intuit_appid=Intuit.delivery.releasemanagementservice,intuit_app_secret=preprdnq72WEqnwebdIjuUixzdq0ekpLMIvr2Hfa",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE1OTY2NDEzNzIsImV4cCI6MTU5NzI0NjE3MiwiaWF0IjoxNTk2NjQxMzcyfQ.z5wBgJKCRKOCC13ZBM9EzckCBP_gSWVVVz2oAP7PFek",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"code\": \"KY5302AK123\",\r\n    \"description\": \"SAMPLES FOR S5302AKX11\",\r\n    \"categoryId\": 1,\r\n    \"category\": \"General\",\r\n    \"unitId\": 1,\r\n    \"unit\": \"Pcs\",\r\n    \"companyId\": 1,\r\n    \"warehouseId\": 1,\r\n    \"minQty\": 10,\r\n    \"maxQty\": 100,\r\n    \"openingQty\": 25,\r\n    \"isActive\": true,\r\n    \"location\": \"North West\",\r\n    \"intransitQty\": 10,\r\n    \"qtyInHand\": 20,\r\n    \"supplierPrice\": 5.0000,\r\n    \"customerPrice\": 10.0000,\r\n    \"sku\": \"123456\",\r\n    \"isSurcharge\": true,\r\n    \"surchargePercentage\": 0.10,\r\n    \"surchargeAmount\": 1.10\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44390/parts/1/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"parts",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44390/parts/1/1/1805",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Intuit_IAM_Authentication intuit_appid=Intuit.delivery.releasemanagementservice,intuit_app_secret=preprdnq72WEqnwebdIjuUixzdq0ekpLMIvr2Hfa",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE1OTY2NDEzNzIsImV4cCI6MTU5NzI0NjE3MiwiaWF0IjoxNTk2NjQxMzcyfQ.z5wBgJKCRKOCC13ZBM9EzckCBP_gSWVVVz2oAP7PFek",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 888,\r\n    \"code\": \"KY5302AK1\",\r\n    \"description\": \"SAMPLES FOR S5302AKX11\",\r\n    \"categoryId\": 1,\r\n    \"category\": \"General\",\r\n    \"unitId\": 1,\r\n    \"unit\": \"Pcs\",\r\n    \"companyId\": 1,\r\n    \"warehouseId\": 1,\r\n    \"minQty\": 10,\r\n    \"maxQty\": 100,\r\n    \"openingQty\": 25,\r\n    \"isActive\": true,\r\n    \"location\": \"North West\",\r\n    \"intransitQty\": 10,\r\n    \"qtyInHand\": 20,\r\n    \"supplierPrice\": 5.0000,\r\n    \"customerPrice\": 10.0000,\r\n    \"sku\": \"123456\",\r\n    \"isSurcharge\": true,\r\n    \"surchargePercentage\": 0.10,\r\n    \"surchargeAmount\": 1.10\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44390/parts/1/1/1805",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"parts",
+						"1",
+						"1",
+						"1805"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44390/parts/1",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Intuit_IAM_Authentication intuit_appid=Intuit.delivery.releasemanagementservice,intuit_app_secret=preprdnq72WEqnwebdIjuUixzdq0ekpLMIvr2Hfa",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE1OTY2NDEzNzIsImV4cCI6MTU5NzI0NjE3MiwiaWF0IjoxNTk2NjQxMzcyfQ.z5wBgJKCRKOCC13ZBM9EzckCBP_gSWVVVz2oAP7PFek",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"code\": \"KY5302AK123\",\r\n    \"description\": \"SAMPLES FOR S5302AKX11\",\r\n    \"categoryId\": 1,\r\n    \"category\": \"General\",\r\n    \"unitId\": 1,\r\n    \"unit\": \"Pcs\",\r\n    \"companyId\": 1,\r\n    \"warehouseId\": 1,\r\n    \"minQty\": 10,\r\n    \"maxQty\": 100,\r\n    \"openingQty\": 25,\r\n    \"isActive\": true,\r\n    \"location\": \"North West\",\r\n    \"intransitQty\": 10,\r\n    \"qtyInHand\": 20,\r\n    \"supplierPrice\": 5.0000,\r\n    \"customerPrice\": 10.0000,\r\n    \"sku\": \"123456\",\r\n    \"isSurcharge\": true,\r\n    \"surchargePercentage\": 0.10,\r\n    \"surchargeAmount\": 1.10\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44390/parts/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"parts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44390/parts/0",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Intuit_IAM_Authentication intuit_appid=Intuit.delivery.releasemanagementservice,intuit_app_secret=preprdnq72WEqnwebdIjuUixzdq0ekpLMIvr2Hfa",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE1OTY2NDEzNzIsImV4cCI6MTU5NzI0NjE3MiwiaWF0IjoxNTk2NjQxMzcyfQ.z5wBgJKCRKOCC13ZBM9EzckCBP_gSWVVVz2oAP7PFek",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n   \"id\":22,\r\n   \"companyId\":1,\r\n   \"customerId\":9,\r\n   \"masterPackingSlipNo\":\"2019-014\",\r\n   \"comment\":\"first master\",\r\n   \"updatedDate\": \"2019-12-03T00:00:00\",\r\n   \"IsPOSUploaded\": false,\r\n   \"PackingSlips\":[{\r\n    \"id\": 17,\r\n    \"companyId\": 1,\r\n    \"customerId\": 9,\r\n    \"packingSlipNo\": \"2019-014\",\r\n    \"shippingDate\": \"2019-12-03T00:00:00\",\r\n    \"shipVia\": \"Fed Ex\",\r\n    \"crates\": 10,\r\n    \"boxes\": 0,\r\n    \"grossWeight\": 0.00,\r\n    \"shippingCharge\": 0.0000,\r\n    \"customCharge\": 0.0000,\r\n    \"subTotal\": 116.5000,\r\n    \"total\": 116.5000,\r\n    \"isInvoiceCreated\": false,\r\n    \"isPaymentReceived\": false,\r\n    \"fob\": \"New Jersey\",\r\n    \"terms\": \"30 days\",\r\n    \"shipmentInfoId\": 29,\r\n    \"invoiceDate\": \"1900-01-01T00:00:00\",\r\n    \"isPOSUploaded\": false,\r\n    \"posPath\": \"\",\r\n    \"totalSurcharge\": 0.0000,\r\n    \"packingSlipDetails\": [\r\n        {\r\n            \"id\": 31,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 349,\r\n            \"qty\": 20,\r\n            \"boxes\": 1,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 5.6500,\r\n            \"price\": 56.5000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 349,\r\n                \"code\": \"D - 1000A\",\r\n                \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -60,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 520,\r\n                        \"partID\": 349,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 559,\r\n                        \"partId\": 349,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 5.65,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        {\r\n            \"id\": 32,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 329,\r\n            \"qty\": 20,\r\n            \"boxes\": 2,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 3.0000,\r\n            \"price\": 60.0000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 329,\r\n                \"code\": \"D1000Cam\",\r\n                \"description\": \"D1000 Cam Rod\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -40,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 498,\r\n                        \"partID\": 329,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000\",\r\n                        \"description\": \"D1000Cam\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 558,\r\n                        \"partId\": 329,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D1000Cam\",\r\n                        \"description\": \"D1000 Cam Rod\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 3.00,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"customerShippingInfo\": null,\r\n    \"customerDetail\": null,\r\n    \"companyDetail\": null\r\n},\r\n{\r\n    \"id\": 18,\r\n    \"companyId\": 1,\r\n    \"customerId\": 9,\r\n    \"packingSlipNo\": \"2019-014\",\r\n    \"shippingDate\": \"2019-12-03T00:00:00\",\r\n    \"shipVia\": \"Fed Ex\",\r\n    \"crates\": 10,\r\n    \"boxes\": 0,\r\n    \"grossWeight\": 0.00,\r\n    \"shippingCharge\": 0.0000,\r\n    \"customCharge\": 0.0000,\r\n    \"subTotal\": 116.5000,\r\n    \"total\": 116.5000,\r\n    \"isInvoiceCreated\": false,\r\n    \"isPaymentReceived\": false,\r\n    \"fob\": \"New Jersey\",\r\n    \"terms\": \"30 days\",\r\n    \"shipmentInfoId\": 29,\r\n    \"invoiceDate\": \"1900-01-01T00:00:00\",\r\n    \"isPOSUploaded\": false,\r\n    \"posPath\": \"\",\r\n    \"totalSurcharge\": 0.0000,\r\n    \"packingSlipDetails\": [\r\n        {\r\n            \"id\": 31,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 349,\r\n            \"qty\": 20,\r\n            \"boxes\": 1,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 5.6500,\r\n            \"price\": 56.5000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 349,\r\n                \"code\": \"D - 1000A\",\r\n                \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -60,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 520,\r\n                        \"partID\": 349,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 559,\r\n                        \"partId\": 349,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 5.65,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        {\r\n            \"id\": 32,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 329,\r\n            \"qty\": 20,\r\n            \"boxes\": 2,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 3.0000,\r\n            \"price\": 60.0000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 329,\r\n                \"code\": \"D1000Cam\",\r\n                \"description\": \"D1000 Cam Rod\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -40,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 498,\r\n                        \"partID\": 329,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000\",\r\n                        \"description\": \"D1000Cam\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 558,\r\n                        \"partId\": 329,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D1000Cam\",\r\n                        \"description\": \"D1000 Cam Rod\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 3.00,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"customerShippingInfo\": null,\r\n    \"customerDetail\": null,\r\n    \"companyDetail\": null\r\n}\r\n   \t]\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44390/parts/0",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"parts",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44390/parts/1/1/333/out/5/note1",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Intuit_IAM_Authentication intuit_appid=Intuit.delivery.releasemanagementservice,intuit_app_secret=preprdnq72WEqnwebdIjuUixzdq0ekpLMIvr2Hfa",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE1OTY2NDEzNzIsImV4cCI6MTU5NzI0NjE3MiwiaWF0IjoxNTk2NjQxMzcyfQ.z5wBgJKCRKOCC13ZBM9EzckCBP_gSWVVVz2oAP7PFek",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n   \"id\":22,\r\n   \"companyId\":1,\r\n   \"customerId\":9,\r\n   \"masterPackingSlipNo\":\"2019-014\",\r\n   \"comment\":\"first master\",\r\n   \"updatedDate\": \"2019-12-03T00:00:00\",\r\n   \"IsPOSUploaded\": false,\r\n   \"PackingSlips\":[{\r\n    \"id\": 17,\r\n    \"companyId\": 1,\r\n    \"customerId\": 9,\r\n    \"packingSlipNo\": \"2019-014\",\r\n    \"shippingDate\": \"2019-12-03T00:00:00\",\r\n    \"shipVia\": \"Fed Ex\",\r\n    \"crates\": 10,\r\n    \"boxes\": 0,\r\n    \"grossWeight\": 0.00,\r\n    \"shippingCharge\": 0.0000,\r\n    \"customCharge\": 0.0000,\r\n    \"subTotal\": 116.5000,\r\n    \"total\": 116.5000,\r\n    \"isInvoiceCreated\": false,\r\n    \"isPaymentReceived\": false,\r\n    \"fob\": \"New Jersey\",\r\n    \"terms\": \"30 days\",\r\n    \"shipmentInfoId\": 29,\r\n    \"invoiceDate\": \"1900-01-01T00:00:00\",\r\n    \"isPOSUploaded\": false,\r\n    \"posPath\": \"\",\r\n    \"totalSurcharge\": 0.0000,\r\n    \"packingSlipDetails\": [\r\n        {\r\n            \"id\": 31,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 349,\r\n            \"qty\": 20,\r\n            \"boxes\": 1,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 5.6500,\r\n            \"price\": 56.5000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 349,\r\n                \"code\": \"D - 1000A\",\r\n                \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -60,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 520,\r\n                        \"partID\": 349,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 559,\r\n                        \"partId\": 349,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 5.65,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        {\r\n            \"id\": 32,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 329,\r\n            \"qty\": 20,\r\n            \"boxes\": 2,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 3.0000,\r\n            \"price\": 60.0000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 329,\r\n                \"code\": \"D1000Cam\",\r\n                \"description\": \"D1000 Cam Rod\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -40,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 498,\r\n                        \"partID\": 329,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000\",\r\n                        \"description\": \"D1000Cam\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 558,\r\n                        \"partId\": 329,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D1000Cam\",\r\n                        \"description\": \"D1000 Cam Rod\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 3.00,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"customerShippingInfo\": null,\r\n    \"customerDetail\": null,\r\n    \"companyDetail\": null\r\n},\r\n{\r\n    \"id\": 18,\r\n    \"companyId\": 1,\r\n    \"customerId\": 9,\r\n    \"packingSlipNo\": \"2019-014\",\r\n    \"shippingDate\": \"2019-12-03T00:00:00\",\r\n    \"shipVia\": \"Fed Ex\",\r\n    \"crates\": 10,\r\n    \"boxes\": 0,\r\n    \"grossWeight\": 0.00,\r\n    \"shippingCharge\": 0.0000,\r\n    \"customCharge\": 0.0000,\r\n    \"subTotal\": 116.5000,\r\n    \"total\": 116.5000,\r\n    \"isInvoiceCreated\": false,\r\n    \"isPaymentReceived\": false,\r\n    \"fob\": \"New Jersey\",\r\n    \"terms\": \"30 days\",\r\n    \"shipmentInfoId\": 29,\r\n    \"invoiceDate\": \"1900-01-01T00:00:00\",\r\n    \"isPOSUploaded\": false,\r\n    \"posPath\": \"\",\r\n    \"totalSurcharge\": 0.0000,\r\n    \"packingSlipDetails\": [\r\n        {\r\n            \"id\": 31,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 349,\r\n            \"qty\": 20,\r\n            \"boxes\": 1,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 5.6500,\r\n            \"price\": 56.5000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 349,\r\n                \"code\": \"D - 1000A\",\r\n                \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -60,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 520,\r\n                        \"partID\": 349,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 559,\r\n                        \"partId\": 349,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 5.65,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        {\r\n            \"id\": 32,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 329,\r\n            \"qty\": 20,\r\n            \"boxes\": 2,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 3.0000,\r\n            \"price\": 60.0000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 329,\r\n                \"code\": \"D1000Cam\",\r\n                \"description\": \"D1000 Cam Rod\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -40,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 498,\r\n                        \"partID\": 329,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000\",\r\n                        \"description\": \"D1000Cam\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 558,\r\n                        \"partId\": 329,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D1000Cam\",\r\n                        \"description\": \"D1000 Cam Rod\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 3.00,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"customerShippingInfo\": null,\r\n    \"customerDetail\": null,\r\n    \"companyDetail\": null\r\n}\r\n   \t]\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44390/parts/1/1/333/out/5/note1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"parts",
+						"1",
+						"1",
+						"333",
+						"out",
+						"5",
+						"note1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44390/parts/1/1/333/in/5/note1",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Intuit_IAM_Authentication intuit_appid=Intuit.delivery.releasemanagementservice,intuit_app_secret=preprdnq72WEqnwebdIjuUixzdq0ekpLMIvr2Hfa",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE1OTY2NDEzNzIsImV4cCI6MTU5NzI0NjE3MiwiaWF0IjoxNTk2NjQxMzcyfQ.z5wBgJKCRKOCC13ZBM9EzckCBP_gSWVVVz2oAP7PFek",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n   \"id\":22,\r\n   \"companyId\":1,\r\n   \"customerId\":9,\r\n   \"masterPackingSlipNo\":\"2019-014\",\r\n   \"comment\":\"first master\",\r\n   \"updatedDate\": \"2019-12-03T00:00:00\",\r\n   \"IsPOSUploaded\": false,\r\n   \"PackingSlips\":[{\r\n    \"id\": 17,\r\n    \"companyId\": 1,\r\n    \"customerId\": 9,\r\n    \"packingSlipNo\": \"2019-014\",\r\n    \"shippingDate\": \"2019-12-03T00:00:00\",\r\n    \"shipVia\": \"Fed Ex\",\r\n    \"crates\": 10,\r\n    \"boxes\": 0,\r\n    \"grossWeight\": 0.00,\r\n    \"shippingCharge\": 0.0000,\r\n    \"customCharge\": 0.0000,\r\n    \"subTotal\": 116.5000,\r\n    \"total\": 116.5000,\r\n    \"isInvoiceCreated\": false,\r\n    \"isPaymentReceived\": false,\r\n    \"fob\": \"New Jersey\",\r\n    \"terms\": \"30 days\",\r\n    \"shipmentInfoId\": 29,\r\n    \"invoiceDate\": \"1900-01-01T00:00:00\",\r\n    \"isPOSUploaded\": false,\r\n    \"posPath\": \"\",\r\n    \"totalSurcharge\": 0.0000,\r\n    \"packingSlipDetails\": [\r\n        {\r\n            \"id\": 31,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 349,\r\n            \"qty\": 20,\r\n            \"boxes\": 1,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 5.6500,\r\n            \"price\": 56.5000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 349,\r\n                \"code\": \"D - 1000A\",\r\n                \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -60,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 520,\r\n                        \"partID\": 349,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 559,\r\n                        \"partId\": 349,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 5.65,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        {\r\n            \"id\": 32,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 329,\r\n            \"qty\": 20,\r\n            \"boxes\": 2,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 3.0000,\r\n            \"price\": 60.0000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 329,\r\n                \"code\": \"D1000Cam\",\r\n                \"description\": \"D1000 Cam Rod\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -40,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 498,\r\n                        \"partID\": 329,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000\",\r\n                        \"description\": \"D1000Cam\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 558,\r\n                        \"partId\": 329,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D1000Cam\",\r\n                        \"description\": \"D1000 Cam Rod\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 3.00,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"customerShippingInfo\": null,\r\n    \"customerDetail\": null,\r\n    \"companyDetail\": null\r\n},\r\n{\r\n    \"id\": 18,\r\n    \"companyId\": 1,\r\n    \"customerId\": 9,\r\n    \"packingSlipNo\": \"2019-014\",\r\n    \"shippingDate\": \"2019-12-03T00:00:00\",\r\n    \"shipVia\": \"Fed Ex\",\r\n    \"crates\": 10,\r\n    \"boxes\": 0,\r\n    \"grossWeight\": 0.00,\r\n    \"shippingCharge\": 0.0000,\r\n    \"customCharge\": 0.0000,\r\n    \"subTotal\": 116.5000,\r\n    \"total\": 116.5000,\r\n    \"isInvoiceCreated\": false,\r\n    \"isPaymentReceived\": false,\r\n    \"fob\": \"New Jersey\",\r\n    \"terms\": \"30 days\",\r\n    \"shipmentInfoId\": 29,\r\n    \"invoiceDate\": \"1900-01-01T00:00:00\",\r\n    \"isPOSUploaded\": false,\r\n    \"posPath\": \"\",\r\n    \"totalSurcharge\": 0.0000,\r\n    \"packingSlipDetails\": [\r\n        {\r\n            \"id\": 31,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 349,\r\n            \"qty\": 20,\r\n            \"boxes\": 1,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 5.6500,\r\n            \"price\": 56.5000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 349,\r\n                \"code\": \"D - 1000A\",\r\n                \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -60,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 520,\r\n                        \"partID\": 349,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 559,\r\n                        \"partId\": 349,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D - 1000A\",\r\n                        \"description\": \"D - 1000A Knob Strike & Cam Rod Assy\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 5.65,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        {\r\n            \"id\": 32,\r\n            \"packingSlipId\": 22,\r\n            \"isBlankOrder\": true,\r\n            \"orderNo\": \"BG 101\",\r\n            \"orderId\": 0,\r\n            \"orderDetailId\": 0,\r\n            \"srNo\": 0,\r\n            \"partId\": 329,\r\n            \"qty\": 20,\r\n            \"boxes\": 2,\r\n            \"inBasket\": true,\r\n            \"unitPrice\": 3.0000,\r\n            \"price\": 60.0000,\r\n            \"surcharge\": 0.0000,\r\n            \"surchargePerPound\": 0.0000,\r\n            \"surchargePerUnit\": 0.0000,\r\n            \"totalSurcharge\": 0.0000,\r\n            \"excessQty\": 0,\r\n            \"partDetail\": {\r\n                \"id\": 329,\r\n                \"code\": \"D1000Cam\",\r\n                \"description\": \"D1000 Cam Rod\",\r\n                \"companyId\": 1,\r\n                \"weightInKg\": 0.00,\r\n                \"weightInLb\": 0.00,\r\n                \"minQty\": 0,\r\n                \"maxQty\": 0,\r\n                \"openingQty\": 0,\r\n                \"safeQty\": 0,\r\n                \"drawingNo\": \"\",\r\n                \"drawingUploaded\": false,\r\n                \"drawingFileName\": \"NULL\",\r\n                \"isActive\": true,\r\n                \"isSample\": false,\r\n                \"location\": \"NULL\",\r\n                \"intransitQty\": 0,\r\n                \"qtyInHand\": -40,\r\n                \"partSupplierAssignments\": [\r\n                    {\r\n                        \"id\": 498,\r\n                        \"partID\": 329,\r\n                        \"supplierID\": 3,\r\n                        \"supplierName\": \"Global Exportech \",\r\n                        \"mapCode\": \"D - 1000\",\r\n                        \"description\": \"D1000Cam\",\r\n                        \"qtyInHand\": 0,\r\n                        \"qtyInTransit\": 0,\r\n                        \"totalQty\": 0,\r\n                        \"unitPrice\": 0.00\r\n                    }\r\n                ],\r\n                \"partCustomerAssignments\": [\r\n                    {\r\n                        \"id\": 558,\r\n                        \"partId\": 329,\r\n                        \"customerId\": 9,\r\n                        \"customerName\": \"ABC\",\r\n                        \"mapCode\": \"D1000Cam\",\r\n                        \"description\": \"D1000 Cam Rod\",\r\n                        \"weight\": 0.00,\r\n                        \"rate\": 3.00,\r\n                        \"surchargeExist\": false,\r\n                        \"surchargePerPound\": 0.00\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"customerShippingInfo\": null,\r\n    \"customerDetail\": null,\r\n    \"companyDetail\": null\r\n}\r\n   \t]\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44390/parts/1/1/333/in/5/note1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"parts",
+						"1",
+						"1",
+						"333",
+						"in",
+						"5",
+						"note1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

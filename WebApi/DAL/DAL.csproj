@@ -106,6 +106,7 @@
     <Compile Include="Models\UserPriviledge.cs" />
     <Compile Include="Models\UserPriviledgeDetail.cs" />
     <Compile Include="Models\UserReport.cs" />
+    <Compile Include="Models\Warehouse.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\EntityTrackerRepository.cs" />
     <Compile Include="Repository\MasterPackingSlipRepository.cs" />

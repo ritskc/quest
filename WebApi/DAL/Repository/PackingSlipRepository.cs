@@ -83,16 +83,16 @@ namespace DAL.Repository
 
                     foreach (PackingSlipDetails packingSlipDetail in packingSlip.PackingSlipDetails)
                     {
-                        var partDetail = await this.partRepository.GetPartAsync(packingSlipDetail.PartId, connection, transaction);
+                        var partDetail = await this.partRepository.GetPartAsync(packingSlipDetail.PartId, packingSlip.WarehouseId, connection, transaction);
                         decimal orderPartPrice = 0;
-                        packingSlipDetail.IsRepackage = partDetail.IsRepackage;
+                        //packingSlipDetail.IsRepackage = partDetail.IsRepackage;
                         if (packingSlipDetail.IsRepackage)
                             packingSlip.IsRepackage = true;
 
-                        if (packingSlip.IsInvoiceCreated)
-                            packingSlipDetail.UnitPrice = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.Rate).FirstOrDefault();
-                        else
-                            packingSlip.IsInvoiceCreated = false;
+                        //if (packingSlip.IsInvoiceCreated)
+                        //    packingSlipDetail.UnitPrice = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.Rate).FirstOrDefault();
+                        //else
+                        //    packingSlip.IsInvoiceCreated = false;
 
                         if (packingSlip.IsInvoiceCreated && !packingSlipDetail.IsBlankOrder)
                         {
@@ -149,12 +149,12 @@ namespace DAL.Repository
                         packingSlipDetail.Price = packingSlipDetail.Qty * packingSlipDetail.UnitPrice;
                         packingSlip.SubTotal = packingSlip.SubTotal + packingSlipDetail.Price;
 
-                        packingSlipDetail.Surcharge = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.SurchargePerPound).FirstOrDefault();
+                        packingSlipDetail.Surcharge = partDetail.SurchargeAmount;
                         packingSlipDetail.SurchargePerPound = packingSlipDetail.Surcharge;
-                        packingSlipDetail.SurchargePerUnit = packingSlipDetail.Surcharge * partDetail.WeightInLb;
+                        packingSlipDetail.SurchargePerUnit = packingSlipDetail.Surcharge ;
                         packingSlipDetail.TotalSurcharge = packingSlipDetail.SurchargePerUnit * packingSlipDetail.Qty;
                         packingSlip.TotalSurcharge = packingSlip.TotalSurcharge + packingSlipDetail.TotalSurcharge;
-                        packingSlip.GrossWeight = packingSlip.GrossWeight + (packingSlipDetail.Qty * partDetail.WeightInLb);
+                        packingSlip.GrossWeight = packingSlip.GrossWeight + (packingSlipDetail.Qty);
                         packingSlip.Boxes = packingSlip.Boxes + packingSlipDetail.Boxes;
                         packingSlipDetail.LineNumber = 0;
                     }
@@ -1064,14 +1064,14 @@ namespace DAL.Repository
                     packingSlip.IsRepackage = false;
                     foreach (PackingSlipDetails packingSlipDetail in packingSlip.PackingSlipDetails)
                     {
-                        var partDetail = await this.partRepository.GetPartAsync(packingSlipDetail.PartId, connection, transaction);
+                        var partDetail = await this.partRepository.GetPartAsync(packingSlipDetail.PartId,packingSlip.WarehouseId, connection, transaction);
 
-                        packingSlipDetail.IsRepackage = partDetail.IsRepackage;
+                        //packingSlipDetail.IsRepackage = partDetail.IsRepackage;
                         if (packingSlipDetail.IsRepackage)
                             packingSlip.IsRepackage = true;
 
                         if (packingSlip.IsInvoiceCreated)
-                            packingSlipDetail.UnitPrice = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.Rate).FirstOrDefault();
+                            packingSlipDetail.UnitPrice = partDetail.CustomerPrice;
                         else
                             packingSlip.IsInvoiceCreated = false;
 
@@ -1097,12 +1097,12 @@ namespace DAL.Repository
                         packingSlipDetail.Price = packingSlipDetail.Qty * packingSlipDetail.UnitPrice;
                         packingSlip.SubTotal = packingSlip.SubTotal + packingSlipDetail.Price;
 
-                        packingSlipDetail.Surcharge = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.SurchargePerPound).FirstOrDefault();
+                        packingSlipDetail.Surcharge = partDetail.SurchargeAmount;
                         packingSlipDetail.SurchargePerPound = packingSlipDetail.Surcharge;
-                        packingSlipDetail.SurchargePerUnit = packingSlipDetail.Surcharge * partDetail.WeightInLb;
+                        packingSlipDetail.SurchargePerUnit = packingSlipDetail.Surcharge;
                         packingSlipDetail.TotalSurcharge = packingSlipDetail.SurchargePerUnit * packingSlipDetail.Qty;
                         packingSlip.TotalSurcharge = packingSlip.TotalSurcharge + packingSlipDetail.TotalSurcharge;
-                        packingSlip.GrossWeight = packingSlip.GrossWeight + (packingSlipDetail.Qty * partDetail.WeightInLb);
+                        packingSlip.GrossWeight = packingSlip.GrossWeight + (packingSlipDetail.Qty );
                         packingSlip.Boxes = packingSlip.Boxes + packingSlipDetail.Boxes;
                         packingSlipDetail.LineNumber = 0;
                     }
@@ -1528,7 +1528,7 @@ namespace DAL.Repository
                                 userActivityReport.Module = BusinessConstants.MODULE.PACKING_SLIP.ToString();
                                 userActivityReport.Action = BusinessConstants.ACTION.SCAN_BOX.ToString();
                                 userActivityReport.Reference = packingSlip.PackingSlipNo;
-                                var part = await partRepository.GetPartAsync(packingSlipBox.PartId, command.Connection, command.Transaction);
+                                var part = await partRepository.GetPartAsync(packingSlipBox.PartId, packingSlip.WarehouseId, command.Connection, command.Transaction);
                                 if (part != null)
                                     userActivityReport.Description = "Line # : " + packingSlipDetails.LineNumber.ToString() + " Part : " + part.Code.ToString() + " Box # : " + packingSlipBox.BoxeNo.ToString() + " scanned";
                                 else
@@ -1567,7 +1567,7 @@ namespace DAL.Repository
                     {
                         foreach (PackingSlipBoxDetails packingSlipBox in packingSlipDetails.PackingSlipBoxDetails)
                         {
-                            var part = await partRepository.GetPartAsync(packingSlipBox.PartId);
+                            var part = await partRepository.GetPartAsync(packingSlipBox.PartId, packingSlip.WarehouseId);
 
                             var packingboxestatus = new PackingSlipScanBoxeStatus();
                             packingboxestatus.Id = packingSlipBox.Id;

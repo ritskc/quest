@@ -10,6 +10,7 @@ namespace DAL.Models
     {
         public long Id { get; set; }
         public int CompanyId { get; set; }
+        public int WarehouseId { get; set; }
         public int CustomerId { get; set; }
         public bool IsBlanketPO { get; set; }
         public string PONo { get; set; }

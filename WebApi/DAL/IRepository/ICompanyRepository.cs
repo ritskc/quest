@@ -17,5 +17,7 @@ namespace DAL.IRepository
         Task<int> AddCompanyAsync(Company company);
         Task<int> UpdateCompanyAsync(Company company);
         Task<int> DeleteCompanyAsync(long id);
+
+        Task<IEnumerable<Warehouse>> GetWarehouseAsync(int companyId);
     }
 }

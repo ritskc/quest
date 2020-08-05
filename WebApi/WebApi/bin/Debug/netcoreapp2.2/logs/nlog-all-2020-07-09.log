@@ -1,0 +1,26 @@
+2020-07-09 14:14:41.6766||DEBUG|WebApi.Program|init main 
+2020-07-09 14:14:43.7606||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\rcharkhawala\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-07-09 14:14:44.7467|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-07-09 14:14:44.7467|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-07-09 14:14:44.7963|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 49.7323ms 200  
+2020-07-09 14:14:44.9070|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 160.9282ms 404  
+2020-07-09 14:14:52.8311|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/parts/1/1 application/json 3443 
+2020-07-09 14:14:52.8389|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.PartsController.GetParts (WebApi)' 
+2020-07-09 14:14:52.8842|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetParts", controller = "Parts"}. Executing action WebApi.Controllers.PartsController.GetParts (WebApi) 
+2020-07-09 14:14:52.9028|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.PartsController.GetParts (WebApi) with arguments (1, 1) - Validation state: Valid 
+2020-07-09 14:15:00.1113|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.PartsController.GetParts (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 7205.458ms. 
+2020-07-09 14:15:00.1230|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Models.Part, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2020-07-09 14:15:00.1707|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.PartsController.GetParts (WebApi) in 7283.5013ms 
+2020-07-09 14:15:00.1707|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.PartsController.GetParts (WebApi)' 
+2020-07-09 14:15:00.1707|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 7347.4818ms 200 application/json; charset=utf-8 
+2020-07-09 14:15:00.1888|32|INFO|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HM146FQH6KVS", Request id "0HM146FQH6KVS:00000002": the application completed without reading the entire request body. 
+2020-07-09 14:15:21.2016|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/parts/1/2 application/json 3443 
+2020-07-09 14:15:21.2113|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.PartsController.GetParts (WebApi)' 
+2020-07-09 14:15:21.2113|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetParts", controller = "Parts"}. Executing action WebApi.Controllers.PartsController.GetParts (WebApi) 
+2020-07-09 14:15:21.2281|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.PartsController.GetParts (WebApi) with arguments (1, 2) - Validation state: Valid 
+2020-07-09 14:15:27.7156|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.PartsController.GetParts (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6486.1084ms. 
+2020-07-09 14:15:27.7156|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Models.Part, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2020-07-09 14:15:27.7296|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.PartsController.GetParts (WebApi) in 6502.2625ms 
+2020-07-09 14:15:27.7296|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.PartsController.GetParts (WebApi)' 
+2020-07-09 14:15:27.7296|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 6530.9888ms 200 application/json; charset=utf-8 
+2020-07-09 14:15:27.7296|32|INFO|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HM146FQH6KVR", Request id "0HM146FQH6KVR:00000002": the application completed without reading the entire request body. 

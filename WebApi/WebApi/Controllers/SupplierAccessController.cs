@@ -39,7 +39,7 @@ namespace WebApi.Controllers
                     return BadRequest();
                 }
 
-                var parts = await this._partService.GetAllPartsAsync(po.CompanyId,1);
+                var parts = await this._partService.GetAllPartsAsync(po.CompanyId,po.WarehouseId,1);
                 if (po == null || po.poDetails == null)
                     return BadRequest("Invalid PO");
 
@@ -64,9 +64,9 @@ namespace WebApi.Controllers
                             return BadRequest(string.Format("Invalid part"));
 
                     }
-                    var supplier = part.partSupplierAssignments.Where(x => x.SupplierID == po.SupplierId).FirstOrDefault();
-                    if (supplier == null)
-                        return BadRequest(string.Format("Invalid part : {0} does not belong to this supplier", part.Code));
+                    //var supplier = part.partSupplierAssignments.Where(x => x.SupplierID == po.SupplierId).FirstOrDefault();
+                    //if (supplier == null)
+                    //    return BadRequest(string.Format("Invalid part : {0} does not belong to this supplier", part.Code));
 
                 }
                 //po.Id = id;

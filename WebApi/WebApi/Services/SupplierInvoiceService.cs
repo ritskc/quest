@@ -54,7 +54,7 @@ namespace WebApi.Services
             {
                 List<SupplierInvoicePoDetails> supplierInvoicePoDetails = new List<SupplierInvoicePoDetails>();
 
-                var part = await _partRepository.GetPartByMapCodeAsync(supplierInvoice.SupplierId, supplierInvoiceDetail.PartCode);
+                var part = await _partRepository.GetPartAsync(1, supplierInvoice.WarehouesId);
                 supplierInvoiceDetail.PartId = part.Id;
                 supplierInvoiceDetail.SrNo = srNo;
                 srNo++;
@@ -141,12 +141,12 @@ namespace WebApi.Services
             return await this._supplierInvoiceRepository.DeleteSupplierInvoiceAsync(supplierInvoiceId);
         }
 
-        public async Task<IEnumerable<SupplierInvoice>> GetAllSupplierInvoicesAsync(int companyId,int userId)
+        public async Task<IEnumerable<SupplierInvoice>> GetAllSupplierInvoicesAsync(int companyId,int warehouseId,int userId)
         {
            var result =  await this._supplierInvoiceRepository.GetAllSupplierInvoicesAsync(companyId,userId);
             var companyList = await this._companyRepository.GetAllCompanyAsync();
             var supplierList = await this._supplierRepository.GetAllSupplierAsync(companyId,userId);
-            var partList = await this._partRepository.GetAllPartsAsync(companyId,userId);
+            var partList = await this._partRepository.GetAllPartsAsync(companyId, warehouseId,userId);
 
             
 
@@ -223,7 +223,7 @@ namespace WebApi.Services
             var result = await this._supplierInvoiceRepository.GetIntransitSupplierInvoicesAsync(companyId);
             var companyList = await this._companyRepository.GetAllCompanyAsync();
             var supplierList = await this._supplierRepository.GetAllSupplierAsync(companyId,1);
-            var partList = await this._partRepository.GetAllPartsAsync(companyId,1);
+            var partList = await this._partRepository.GetAllPartsAsync(companyId, result.FirstOrDefault().WarehouesId,1);
             foreach (SupplierInvoice supplierInvoice in result)
             {
                 supplierInvoice.CompanyDetail = companyList.Where(p => p.Id == supplierInvoice.CompanyId).FirstOrDefault();
@@ -305,7 +305,7 @@ namespace WebApi.Services
 
             supplierInvoice.CompanyDetail = this._companyRepository.GetAllCompanyAsync().Result.Where(p => p.Id == supplierInvoice.CompanyId).FirstOrDefault();
             supplierInvoice.SupplierDetail = this._supplierRepository.GetAllSupplierAsync(supplierInvoice.CompanyId,1).Result.Where(p => p.Id == supplierInvoice.SupplierId).FirstOrDefault();
-            var partList = await this._partRepository.GetAllPartsAsync(supplierInvoice.CompanyDetail.Id,1);
+            var partList = await this._partRepository.GetAllPartsAsync(supplierInvoice.CompanyDetail.Id, supplierInvoice.WarehouesId,1);
             foreach (SupplierInvoiceDetail supplierInvoiceDetail in supplierInvoice.supplierInvoiceDetails)
             {
                 supplierInvoiceDetail.PartDetail = partList.Where(p => p.Id == supplierInvoiceDetail.PartId).FirstOrDefault();

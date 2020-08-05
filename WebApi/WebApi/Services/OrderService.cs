@@ -35,12 +35,12 @@ namespace WebApi.Services
             //return await this.orderRepository.GetAllOrderMastersAsync(companyId);
 
             var result = await this._orderRepository.GetAllOrderMastersAsync(companyId,userId);
-            var packingSlips = await this._packingSlipService.GetAllPackingSlipsAsync(companyId,userId);
+            var packingSlips = await this._packingSlipService.GetAllPackingSlipsAsync(companyId, result.FirstOrDefault().WarehouseId,userId);
             foreach (OrderMaster pos in result)
             {
                 foreach (OrderDetail poDetail in pos.OrderDetails)
                 {
-                    var partDetail = await this._partRepository.GetPartAsync(poDetail.PartId);
+                    var partDetail = await this._partRepository.GetPartAsync(poDetail.PartId, pos.WarehouseId);
                     poDetail.part = partDetail;
                     poDetail.PackingSlipNo = "";
                     if (poDetail.ShippedQty > 0)
@@ -71,7 +71,7 @@ namespace WebApi.Services
             var result = await this._orderRepository.GetOrderMasterAsync(orderId);
             foreach (OrderDetail poDetail in result.OrderDetails)
             {
-                var partDetail = await this._partRepository.GetPartAsync(poDetail.PartId);
+                var partDetail = await this._partRepository.GetPartAsync(poDetail.PartId, result.WarehouseId);
                 poDetail.part = partDetail;
             }
             return result;

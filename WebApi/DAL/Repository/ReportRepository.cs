@@ -222,7 +222,7 @@ namespace DAL.Repository
 
                 packingSlipReport.TotalRePackingCharge = customer.RePackingCharge * packingSlipReport.Qty;
                 totalRepackingSlipCost = totalRepackingSlipCost + packingSlipReport.TotalRePackingCharge;
-                var part = partRepository.GetPart(packingSlipReport.PartId);
+                var part = partRepository.GetPart(packingSlipReport.PartId,0);
                 packingSlipReport.PartCode = part.Code;
                 packingSlipReport.PartDescription = part.Description;
                 packingSlipReport.RePackingSlipNo = packingSlipReport.PackingSlipNo;
@@ -424,7 +424,7 @@ namespace DAL.Repository
 
                 packingSlipReport.TotalRePackingCharge = customer.RePackingCharge * packingSlipReport.Qty;
                 totalRepackingSlipCost = totalRepackingSlipCost + packingSlipReport.TotalRePackingCharge;
-                var part = partRepository.GetPart(packingSlipReport.PartId);
+                var part = partRepository.GetPart(packingSlipReport.PartId,0);
                 packingSlipReport.PartCode = part.Code;
                 packingSlipReport.PartDescription = part.Description;
                 packingSlipReport.RePackingSlipNo = packingSlipReport.PackingSlipNo;
@@ -650,7 +650,7 @@ namespace DAL.Repository
                 packingSlipReport.ShipmentZIPCode = packingSlips.FirstOrDefault().customerShippingInfo.ZIPCode;
                 packingSlipReport.ShipmentIsDefault = packingSlips.FirstOrDefault().customerShippingInfo.IsDefault;
 
-                var part = partRepository.GetPart(packingSlipReport.PartId);
+                var part = partRepository.GetPart(packingSlipReport.PartId,0);
                 packingSlipReport.PartCode = part.Code;
                 packingSlipReport.PartDescription = part.Description;
             }
@@ -822,7 +822,7 @@ namespace DAL.Repository
                 poReport.SrNo = poDetail.SrNo;
                 srNo++;
 
-                var part = partRepository.GetPart(poDetail.PartId);
+                var part = partRepository.GetPart(poDetail.PartId,0);
                 poReport.PartCode = part.Code;
                 poReport.PartDescription = part.Description;              
 
@@ -1317,7 +1317,7 @@ namespace DAL.Repository
 
                 packingSlipReport.TotalRePackingCharge = customer.RePackingCharge * packingSlipReport.Qty;
                 totalRepackingSlipCost = totalRepackingSlipCost + packingSlipReport.TotalRePackingCharge;
-                var part = partRepository.GetPart(packingSlipReport.PartId);
+                var part = partRepository.GetPart(packingSlipReport.PartId,0);
                 packingSlipReport.PartCode = part.Code;
                 packingSlipReport.PartDescription = part.Description;
                 packingSlipReport.RePackingSlipNo = packingSlipReport.PackingSlipNo;

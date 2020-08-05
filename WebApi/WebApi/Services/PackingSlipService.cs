@@ -58,9 +58,9 @@ namespace WebApi.Services
             return result;
         }       
 
-        public async Task<IEnumerable<PackingSlip>> GetAllPackingSlipsAsync(int companyId,int userId)
+        public async Task<IEnumerable<PackingSlip>> GetAllPackingSlipsAsync(int companyId,int warehouseId,int userId)
         {
-            var partList = await this.partService.GetAllPartsAsync(companyId,userId);
+            var partList = await this.partService.GetAllPartsAsync(companyId, warehouseId,userId);
             var custList = await this.customerService.GetAllCustomerAsync(companyId, userId);
             var result =  await this.packingSlipRepository.GetAllPackingSlipsAsync(companyId,userId);
 
@@ -85,7 +85,7 @@ namespace WebApi.Services
             //var partList = await this.partService.GetAllPartsAsync(result.CompanyId);
             foreach (PackingSlipDetails packingSlipDetails in result.PackingSlipDetails)
             {
-                var partDetail = await this.partService.GetPartAsync(packingSlipDetails.PartId);//partList.Where(p => p.Id == packingSlipDetails.PartId).FirstOrDefault();
+                var partDetail = await this.partService.GetPartAsync(packingSlipDetails.PartId,result.WarehouseId);//partList.Where(p => p.Id == packingSlipDetails.PartId).FirstOrDefault();
                 packingSlipDetails.PartDetail = partDetail;
             }
             return result;

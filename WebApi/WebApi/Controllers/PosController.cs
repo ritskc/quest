@@ -31,15 +31,15 @@ namespace WebApi.Controllers
         }
 
         // GET: api/Todo
-        [HttpGet("{companyId}")]
-        public async Task<ActionResult<IEnumerable<Po>>> GetPos(int companyId)
+        [HttpGet("{companyId}/{warehouseId}")]
+        public async Task<ActionResult<IEnumerable<Po>>> GetPos(int companyId,int warehouseId)
         {
             try
             {
                 var claimsIdentity = this.User.Identity as ClaimsIdentity;
                 int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
 
-                var result= await this._poService.GetAllPosAsync(companyId,userId);
+                var result= await this._poService.GetAllPosAsync(companyId, warehouseId,userId);
 
                 if (result == null)
                 {
@@ -88,7 +88,7 @@ namespace WebApi.Controllers
                 var claimsIdentity = this.User.Identity as ClaimsIdentity;
                 int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
                 
-                var parts = await this._partService.GetAllPartsAsync(po.CompanyId,userId);
+                var parts = await this._partService.GetAllPartsAsync(po.CompanyId,po.WarehouseId,userId);
                 if (po == null || po.poDetails == null)
                     return BadRequest("Invalid PO");
                 foreach(PoDetail poDetail in po.poDetails)
@@ -106,12 +106,12 @@ namespace WebApi.Controllers
                     {
                         return BadRequest(string.Format("Invalid part"));                        
                     }
-                    var part = selectedParts.Select(x => x.partSupplierAssignments.Where(p => p.SupplierID == po.SupplierId).FirstOrDefault()).FirstOrDefault();
+                    //var part = selectedParts.Select(x => x.SupplierID == po.SupplierId).FirstOrDefault()).FirstOrDefault();
                    
-                    if (part == null)
-                    {
-                        return BadRequest(string.Format("Invalid part : {0} does not belong to this supplier", selectedParts.Select(x=>x.Code).FirstOrDefault()));
-                    }
+                    //if (part == null)
+                    //{
+                    //    return BadRequest(string.Format("Invalid part : {0} does not belong to this supplier", selectedParts.Select(x=>x.Code).FirstOrDefault()));
+                    //}
                 }
                 po.AccessId = Guid.NewGuid().ToString();
                 await this._poService.AddPoAsync(po);
@@ -143,7 +143,7 @@ namespace WebApi.Controllers
                     return BadRequest();
                 }
 
-                var parts = await this._partService.GetAllPartsAsync(po.CompanyId,userId);
+                var parts = await this._partService.GetAllPartsAsync(po.CompanyId,po.WarehouseId,userId);
                 if (po == null || po.poDetails == null)
                     return BadRequest("Invalid PO");
 
@@ -210,12 +210,12 @@ namespace WebApi.Controllers
                         {
                             return BadRequest(string.Format("Invalid part"));
                         }
-                        var part = selectedParts.Select(x => x.partSupplierAssignments.Where(p => p.SupplierID == po.SupplierId).FirstOrDefault()).FirstOrDefault();
+                        //var part = selectedParts.Select(x => x.partSupplierAssignments.Where(p => p.SupplierID == po.SupplierId).FirstOrDefault()).FirstOrDefault();
 
-                        if (part == null)
-                        {
-                            return BadRequest(string.Format("Invalid part : {0} does not belong to this supplier", selectedParts.Select(x => x.Code).FirstOrDefault()));
-                        }                        
+                        //if (part == null)
+                        //{
+                        //    return BadRequest(string.Format("Invalid part : {0} does not belong to this supplier", selectedParts.Select(x => x.Code).FirstOrDefault()));
+                        //}                        
                     }
 
                 }

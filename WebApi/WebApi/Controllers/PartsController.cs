@@ -27,14 +27,17 @@ namespace WebApi.Controllers
         }
 
         // GET: api/Todo
-        [HttpGet("{companyId}")]
-        public async Task<ActionResult<IEnumerable<Part>>> GetParts(int companyId)
+        [HttpGet("{companyId}/{warehouseId}")]
+        public async Task<ActionResult<IEnumerable<Part>>> GetParts(int companyId, int warehouseId)
         {
             try
             {
                 var claimsIdentity = this.User.Identity as ClaimsIdentity;
                 int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
-                var result = await this._partService.GetAllPartsAsync(companyId,userId);
+                if (userId == 0)
+                    return StatusCode(401, "user is unautorized");
+
+                var result = await this._partService.GetAllPartsAsync(companyId,warehouseId,userId);
 
                 if (result == null)
                 {
@@ -51,12 +54,17 @@ namespace WebApi.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{companyId}/{id}")]
-        public async Task<ActionResult<Part>> Get(int companyId, int id)
+        [HttpGet("{companyId}/{warehouseId}/{id}")]
+        public async Task<ActionResult<Part>> Get(int companyId,int warehouseId, int id)
         {
             try
-            {               
-                var result = await this._partService.GetPartAsync(id);
+            {
+                var claimsIdentity = this.User.Identity as ClaimsIdentity;
+                int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
+                if (userId == 0)
+                    return StatusCode(401, "user is unautorized");
+
+                var result = await this._partService.GetPartAsync(id,warehouseId);
 
                 if (result == null)
                 {
@@ -72,94 +80,6 @@ namespace WebApi.Controllers
 
         }
 
-        [HttpGet("{companyId}/{type}/{typeId}")]
-        // [HttpGet("{companyId}/{type}/{partId}")]
-        public async Task<ActionResult> GetPartsByType(int companyId,string type, int typeId)
-        {
-            try
-            {
-
-                if (type == "customer")
-                {
-                    var result = await this._partService.GetPartByCustomerIdAsync(typeId);
-                    return Ok(result);
-                }
-                else if (type == "supplier")
-                {
-                    var result = await this._partService.GetPartBySupplierIdAsync(typeId);
-                    return Ok(result);
-                }
-                if (type.ToLower() == "InTransit".ToLower())
-                {
-                    var result = await this._partService.GetPartInTransitDetailAsync(typeId, companyId);
-                    return Ok(result);
-                }
-                else if (type.ToLower() == "OpenOrder".ToLower())
-                {
-                    var result = await this._partService.GetPartOpenOrderDetailAsync(typeId, companyId);
-                    return Ok(result);
-                }
-                else if (type.ToLower() == "SupplierOpenPO".ToLower())
-                {
-                    var result = await this._partService.GetPartOpenPODetailAsync(typeId, companyId);
-                    return Ok(result);
-                }
-                else if (type.ToLower() == "LatestShipment".ToLower())
-                {
-                    var result = await this._partService.GetPartLatestShipmentAsync(typeId, companyId);
-                    return Ok(result);
-                }
-                else if (type.ToLower() == "LatestReceived".ToLower())
-                {
-                    var result = await this._partService.GetPartLatestReceivedAsync(typeId, companyId);
-                    return Ok(result);
-                }
-                else if (type.ToLower() == "StockWithPrice".ToLower())
-                {
-                    var result = await this._partService.GetStock(typeId, companyId);
-                    return Ok(result);
-                }
-                else
-                    return BadRequest();
-                
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.ToString());
-            }
-
-        }
-
-        //// PUT api/values/5
-        //[HttpGet("{companyId}/{type}/{partId}")]
-        //public async Task<IActionResult> Get(int companyId, string type, int partId)
-        //{
-        //    try
-        //    {
-        //        if (type.ToLower() == "InTransit".ToLower())
-        //        {
-        //            var result = await this._partService.GetPartInTransitDetailAsync(partId,companyId);
-        //            return Ok(result);
-        //        }
-        //        else if (type.ToLower() == "OpenOrder".ToLower())
-        //        {
-        //            var result = await this._partService.GetPartOpenOrderDetailAsync(partId, companyId);
-        //            return Ok(result);
-        //        }
-        //        else if (type.ToLower() == "LatestShipment".ToLower())
-        //        {
-        //            var result = await this._partService.GetPartLatestShipmentAsync(partId, companyId);
-        //            return Ok(result);
-        //        }
-        //        return BadRequest();
-                
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, ex.ToString());
-        //    }
-        //}
-
         // POST api/values
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] Part part)
@@ -168,23 +88,18 @@ namespace WebApi.Controllers
             {
                 var claimsIdentity = this.User.Identity as ClaimsIdentity;
                 int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
+                if (userId == 0)
+                    return StatusCode(401, "user is unautorized");
+
 
                 if (part == null)
                     return StatusCode(500,"invalid part");
                 if (string.IsNullOrEmpty(part.Code) || string.IsNullOrEmpty(part.Description))
                     return StatusCode(500, "invalid partcode / description");
-                if(part.partSupplierAssignments == null || part.partSupplierAssignments.Count() < 1 ||
-                    part.partCustomerAssignments == null || part.partCustomerAssignments.Count() < 1)
-                    return StatusCode(500, "invalid part - Atleast one supplier and Customer requires to create a part");
-                var parts = await this._partService.GetAllPartsAsync(part.CompanyId,userId);
+                
+                var parts = await this._partService.GetAllPartsAsync(part.CompanyId,part.WarehouseId,userId);
                 if (parts.Where(x => x.Code == part.Code).Count() > 0)
-                    return StatusCode(302);
-
-                if (part.partSupplierAssignments.Any(x=>x.MapCode == null || x.MapCode.Trim() == string.Empty))
-                    return StatusCode(500, "invalid Mapcode - mapcode can not be empty");
-
-                if (part.partCustomerAssignments.Any(x => x.MapCode == null || x.MapCode.Trim() == string.Empty))
-                    return StatusCode(500, "invalid Mapcode - mapcode can not be empty");
+                    return StatusCode(302,"partcode already exist");                
 
                 await this._partService.AddPartAsync(part);
                 return Ok();
@@ -201,6 +116,11 @@ namespace WebApi.Controllers
         {
             try
             {
+                var claimsIdentity = this.User.Identity as ClaimsIdentity;
+                int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
+                if (userId == 0)
+                    return StatusCode(401, "user is unautorized");
+
                 if (id != part.Id)
                 {
                     return BadRequest();
@@ -209,10 +129,7 @@ namespace WebApi.Controllers
                 if (part == null)
                     return StatusCode(500, "invalid part");
                 if (string.IsNullOrEmpty(part.Code) || string.IsNullOrEmpty(part.Description))
-                    return StatusCode(500, "invalid partcode / description");
-                if (part.partSupplierAssignments == null || part.partSupplierAssignments.Count() < 1 ||
-                    part.partCustomerAssignments == null || part.partCustomerAssignments.Count() < 1)
-                    return StatusCode(500, "invalid part - Atleast one supplier and Customer requires to create a part");
+                    return StatusCode(500, "invalid partcode / description");                
 
                 part.Id = id;
                 await this._partService.UpdatePartAsync(part);
@@ -223,91 +140,22 @@ namespace WebApi.Controllers
             {
                 return StatusCode(500, ex.ToString());
             }
-        }
-
+        }       
+        
+       
         // PUT api/values/5
-        [HttpPut]
-        public async Task<IActionResult> Put([FromBody] List<StockPrice> stockPrices)
-        {
-            try
-            {                
-                await this._partService.SetStockPriceAsync(stockPrices);
-
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.ToString());
-            }
-        }
-
-        [HttpPut("{import}/{companyId}")]
-        public async Task<IActionResult> Put(int companyId, [FromBody] StockPrice stockPrice)
+        [HttpPost("{companyId}/{warehouseId}/{partId}/{direction}/{qty}/{note}")]
+        public async Task<IActionResult> Put(int companyId,int warehouseId, string type, int partId, int qty,string direction, string note)
         {
             try
             {
-                await this._partService.SetStockPriceAsync(stockPrice,companyId);
+                var claimsIdentity = this.User.Identity as ClaimsIdentity;
+                int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
+                if (userId == 0)
+                    return StatusCode(401, "user is unautorized");
 
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.ToString());
-            }
-        }
-
-
-
-        // PUT api/values/5
-        [HttpPut("{companyId}/{type}/{typeName}/{partCode}/{rate}")]
-        public async Task<IActionResult> Put(int companyId, string type, string typeName, string partCode, decimal rate)
-        {
-            try
-            {               
-                if(type == "customer")
-                    await this._partService.UpdatePartCustomerPriceAsync(companyId,typeName, partCode, rate);
-                else if(type== "supplier" )
-                    await this._partService.UpdatePartSupplierPriceAsync(companyId,typeName, partCode, rate);
-                else
-                    return BadRequest();
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.ToString());
-            }
-        }
-
-        // PUT api/values/5
-        [HttpPut("{companyId}/{type}/{partId}/{qty}")]
-        public async Task<IActionResult> Put(int companyId, string type, int partId, int qty)
-        {
-            try
-            {
-                if (type.ToLower() == "OpeningQty".ToLower())
-                    await this._partService.UpdateOpeningQtyByPartIdAsync(companyId, partId, qty);
-                else if (type.ToLower() == "MonthlyOpeningQty".ToLower())
-                    await this._partService.UpdateMonthlyOpeningQtyByPartIdAsync(companyId, partId, qty);
-                else if (type.ToLower() == "QtyInHand".ToLower())
-                    await this._partService.UpdateQtyInHandByPartIdAsync(companyId, partId, qty);
-                else
-                    return BadRequest();
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.ToString());
-            }
-        }
-
-        // PUT api/values/5
-        [HttpPost("{companyId}/{partId}/{direction}/{qty}/{note}")]
-        public async Task<IActionResult> Put(int companyId, string type, int partId, int qty,string direction, string note)
-        {
-            try
-            {                
                 if (direction.ToLower() == BusinessConstants.DIRECTION.IN.ToString().ToLower() || direction.ToLower() == BusinessConstants.DIRECTION.OUT.ToString().ToLower())
-                    await this._partService.UpdateQtyInHandByPartIdAsync(companyId, partId, qty,direction,note);
+                    await this._partService.UpdateQtyInHandByPartIdAsync(companyId, warehouseId, partId, qty,direction,note);
                 else
                     return BadRequest();
                 return Ok();
@@ -318,33 +166,17 @@ namespace WebApi.Controllers
             }
         }
 
-        // PUT api/values/5
-        [HttpPut("{companyId}/{partCode}/{qty}")]
-        public async Task<IActionResult> Put(int companyId, string partCode, int qty)
-        {
-            try
-            {
-                await this._partService.UpdateOpeningQtyByPartCodeAsync(companyId, partCode, qty);
-               
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.ToString());
-            }
-        }
-
+      
         //DELETE: api/Todo/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Part>> Delete(int id)
         {
             try
             {
-                var result = await this._partService.GetPartAsync(id);
-                if (result == null)
-                {
-                    return NotFound();
-                }
+                var claimsIdentity = this.User.Identity as ClaimsIdentity;
+                int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
+                if (userId == 0)
+                    return StatusCode(401, "user is unautorized");
 
                 await this._partService.DeletePartAsync(id);
 

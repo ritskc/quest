@@ -81,44 +81,26 @@ namespace DAL.Repository
 
                     foreach (PackingSlipDetails packingSlipDetail in packingSlip.PackingSlipDetails)
                     {
-                        var partDetail = await this.partRepository.GetPartAsync(packingSlipDetail.PartId, connection, transaction);
-                        packingSlipDetail.IsRepackage = partDetail.IsRepackage;
+                        var partDetail = await this.partRepository.GetPartAsync(packingSlipDetail.PartId,packingSlip.WarehouseId, connection, transaction);
+                        //packingSlipDetail.IsRepackage = partDetail.IsRepackage;
                         if (packingSlipDetail.IsRepackage)
                             packingSlip.IsRepackage = true;
 
-                        if (packingSlip.IsInvoiceCreated)
-                            packingSlipDetail.UnitPrice = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.Rate).FirstOrDefault();
-                        else
-                            packingSlip.IsInvoiceCreated = false;
-
-                        //if (packingSlip.IsInvoiceCreated && !packingSlipDetail.IsBlankOrder)
-                        //{
-                        //    var orderResult = await _orderRepository.GetOrderMasterAsync(packingSlipDetail.OrderId, command.Connection, command.Transaction);
-
-                        //    if (orderResult != null && !orderResult.IsClosed)
-                        //    {
-                        //        var orderDetail = orderResult.OrderDetails.Where(x => x.Id == packingSlipDetail.OrderDetailId).FirstOrDefault();
-                        //        packingSlipDetail.OrderNo = orderResult.PONo;
-
-                        //        if (orderDetail != null && !orderDetail.IsClosed)
-                        //        {
-                        //            packingSlipDetail.LineNumber = orderDetail.LineNumber;
-                        //            packingSlipDetail.UnitPrice = orderDetail.UnitPrice;
-                        //        }
-                        //    }
-                        //}
+                        //if (packingSlip.IsInvoiceCreated)
+                        //    packingSlipDetail.UnitPrice = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.Rate).FirstOrDefault();
                         //else
                         //    packingSlip.IsInvoiceCreated = false;
 
+                      
                         packingSlipDetail.Price = packingSlipDetail.Qty * packingSlipDetail.UnitPrice;
                         packingSlip.SubTotal = packingSlip.SubTotal + packingSlipDetail.Price;
 
-                        packingSlipDetail.Surcharge = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.SurchargePerPound).FirstOrDefault();
+                        packingSlipDetail.Surcharge = partDetail.SurchargeAmount;
                         packingSlipDetail.SurchargePerPound = packingSlipDetail.Surcharge;
-                        packingSlipDetail.SurchargePerUnit = packingSlipDetail.Surcharge * partDetail.WeightInLb;
+                        packingSlipDetail.SurchargePerUnit = packingSlipDetail.Surcharge;
                         packingSlipDetail.TotalSurcharge = packingSlipDetail.SurchargePerUnit * packingSlipDetail.Qty;
                         packingSlip.TotalSurcharge = packingSlip.TotalSurcharge + packingSlipDetail.TotalSurcharge;
-                        packingSlip.GrossWeight = packingSlip.GrossWeight + (packingSlipDetail.Qty * partDetail.WeightInLb);
+                        packingSlip.GrossWeight = packingSlip.GrossWeight + (packingSlipDetail.Qty );
                         packingSlip.Boxes = packingSlip.Boxes + packingSlipDetail.Boxes;
                         packingSlipDetail.LineNumber = 0;
                     }
@@ -638,26 +620,26 @@ namespace DAL.Repository
                     packingSlip.IsRepackage = false;
                     foreach (PackingSlipDetails packingSlipDetail in packingSlip.PackingSlipDetails)
                     {
-                        var partDetail = await this.partRepository.GetPartAsync(packingSlipDetail.PartId, connection, transaction);
+                        var partDetail = await this.partRepository.GetPartAsync(packingSlipDetail.PartId, packingSlip.WarehouseId, connection, transaction);
 
-                        packingSlipDetail.IsRepackage = partDetail.IsRepackage;
+                        //packingSlipDetail.IsRepackage = partDetail.IsRepackage;
                         if (packingSlipDetail.IsRepackage)
                             packingSlip.IsRepackage = true;
 
-                        if (packingSlip.IsInvoiceCreated)
-                            packingSlipDetail.UnitPrice = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.Rate).FirstOrDefault();
-                        else
-                            packingSlip.IsInvoiceCreated = false;                        
+                        //if (packingSlip.IsInvoiceCreated)
+                        //    packingSlipDetail.UnitPrice = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.Rate).FirstOrDefault();
+                        //else
+                        //    packingSlip.IsInvoiceCreated = false;                        
 
                         packingSlipDetail.Price = packingSlipDetail.Qty * packingSlipDetail.UnitPrice;
                         packingSlip.SubTotal = packingSlip.SubTotal + packingSlipDetail.Price;
 
-                        packingSlipDetail.Surcharge = partDetail.partCustomerAssignments.Where(x => x.CustomerId == packingSlip.CustomerId).Select(x => x.SurchargePerPound).FirstOrDefault();
+                        packingSlipDetail.Surcharge = partDetail.SurchargeAmount;
                         packingSlipDetail.SurchargePerPound = packingSlipDetail.Surcharge;
-                        packingSlipDetail.SurchargePerUnit = packingSlipDetail.Surcharge * partDetail.WeightInLb;
+                        packingSlipDetail.SurchargePerUnit = packingSlipDetail.Surcharge;
                         packingSlipDetail.TotalSurcharge = packingSlipDetail.SurchargePerUnit * packingSlipDetail.Qty;
                         packingSlip.TotalSurcharge = packingSlip.TotalSurcharge + packingSlipDetail.TotalSurcharge;
-                        packingSlip.GrossWeight = packingSlip.GrossWeight + (packingSlipDetail.Qty * partDetail.WeightInLb);
+                        packingSlip.GrossWeight = packingSlip.GrossWeight + (packingSlipDetail.Qty );
                         packingSlip.Boxes = packingSlip.Boxes + packingSlipDetail.Boxes;
                         packingSlipDetail.LineNumber = 0;
                     }

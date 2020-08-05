@@ -239,5 +239,44 @@ namespace DAL.Repository
 
             return await _sqlHelper.ExecuteNonQueryAsync(ConnectionSettings.ConnectionString, sql, CommandType.Text);
         }
+
+        public async Task<IEnumerable<Warehouse>> GetWarehouseAsync(int companyId)
+        {
+            try
+            {
+                List<Warehouse> warehouses = new List<Warehouse>();
+                SqlConnection conn = new SqlConnection(ConnectionSettings.ConnectionString);
+                
+                string commandText = string.Format($"SELECT [id] ,[CompanyId] ,[Name],[Address] ,[PhoneNo] ,[FaxNo],[EMail] FROM [Warehouse] where CompanyId = '{companyId}'");
+                using (SqlCommand cmd = new SqlCommand(commandText, conn))
+                {
+                    cmd.CommandType = CommandType.Text;
+
+                    conn.Open();
+
+                    var dataReader = await cmd.ExecuteReaderAsync(CommandBehavior.CloseConnection);
+
+                    while (dataReader.Read())
+                    {
+                        var warehouse = new Warehouse();
+                        warehouse.Id = Convert.ToInt32(dataReader["Id"]);
+                        warehouse.CompanyId = Convert.ToInt32(dataReader["CompanyId"]);
+                        warehouse.Name = Convert.ToString(dataReader["Name"]);
+                        warehouse.Address = Convert.ToString(dataReader["Address"]);
+                        warehouse.PhoneNo = Convert.ToString(dataReader["PhoneNo"]);
+                        warehouse.FaxNo = Convert.ToString(dataReader["FaxNo"]);
+                        warehouse.EMail = Convert.ToString(dataReader["EMail"]);
+
+                        warehouses.Add(warehouse);
+                    }
+                    conn.Close();
+                }
+                return warehouses;
+            }
+            catch (Exception ex)
+            {
+                throw ex.InnerException;
+            }
+        }
     }
 }

@@ -108,7 +108,7 @@ namespace WebApi.Controllers
                 }
 
                 po.Id = id;
-                var parts = await this._partService.GetAllPartsAsync(po.CompanyId,userId);
+                var parts = await this._partService.GetAllPartsAsync(po.CompanyId,po.WarehouseId,userId);
                 if (po == null || po.OrderDetails == null)
                     return BadRequest("Invalid PO");
 
