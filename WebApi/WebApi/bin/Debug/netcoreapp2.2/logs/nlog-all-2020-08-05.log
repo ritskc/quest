@@ -752,3 +752,132 @@
 2020-08-05 11:36:11.0663|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.PartsController.Put (WebApi)' 
 2020-08-05 11:36:11.0663|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 16.6255ms 200  
 2020-08-05 11:36:11.0663|32|INFO|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HM1PAH631Q75", Request id "0HM1PAH631Q75:0000000D": the application completed without reading the entire request body. 
+2020-08-05 12:06:28.3328||DEBUG|WebApi.Program|init main 
+2020-08-05 12:06:29.5678||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\rcharkhawala\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-08-05 12:06:30.4022|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-08-05 12:06:30.4022|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-08-05 12:06:30.4386|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 36.5685ms 200  
+2020-08-05 12:06:30.5285|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 126.7957ms 404  
+2020-08-05 12:07:00.0203|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/users/authenticate application/json 48 
+2020-08-05 12:07:00.0203|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.UsersController.Authenticate (WebApi)' 
+2020-08-05 12:07:00.0658|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Authenticate", controller = "Users"}. Executing action WebApi.Controllers.UsersController.Authenticate (WebApi) 
+2020-08-05 12:07:00.1592|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.UsersController.Authenticate (WebApi) with arguments (DAL.Models.User) - Validation state: Valid 
+2020-08-05 12:07:00.2572|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.UsersController.Authenticate (WebApi), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 95.1314ms. 
+2020-08-05 12:07:00.2572|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2020-08-05 12:07:00.2761|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.UsersController.Authenticate (WebApi) in 204.229ms 
+2020-08-05 12:07:00.2761|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.UsersController.Authenticate (WebApi)' 
+2020-08-05 12:07:00.2761|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 258.939ms 400 application/json; charset=utf-8 
+2020-08-05 12:07:08.3628|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/users/authenticate application/json 45 
+2020-08-05 12:07:08.3628|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.UsersController.Authenticate (WebApi)' 
+2020-08-05 12:07:08.3628|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Authenticate", controller = "Users"}. Executing action WebApi.Controllers.UsersController.Authenticate (WebApi) 
+2020-08-05 12:07:08.3628|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.UsersController.Authenticate (WebApi) with arguments (DAL.Models.User) - Validation state: Valid 
+2020-08-05 12:07:08.3923|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.UsersController.Authenticate (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.412ms. 
+2020-08-05 12:07:08.3935|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'DAL.Models.User'. 
+2020-08-05 12:07:08.3935|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.UsersController.Authenticate (WebApi) in 40.7018ms 
+2020-08-05 12:07:08.3935|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.UsersController.Authenticate (WebApi)' 
+2020-08-05 12:07:08.3935|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 46.1625ms 200 application/json; charset=utf-8 
+2020-08-05 14:14:11.0095|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/suppliers application/json 1159 
+2020-08-05 14:14:11.0391|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:14:11.1130|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Suppliers"}. Executing action WebApi.Controllers.SuppliersController.Post (WebApi) 
+2020-08-05 14:14:11.1293|2|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. 
+2020-08-05 14:14:11.1293|3|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+2020-08-05 14:14:11.1334|1|INFO|Microsoft.AspNetCore.Mvc.ChallengeResult|Executing ChallengeResult with authentication schemes (). 
+2020-08-05 14:14:11.1334|12|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged. 
+2020-08-05 14:14:11.1334|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.SuppliersController.Post (WebApi) in 26.0682ms 
+2020-08-05 14:14:11.1334|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:14:11.1334|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 132.7627ms 401  
+2020-08-05 14:14:11.1334|32|INFO|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HM1PB620MTVM", Request id "0HM1PB620MTVM:00000001": the application completed without reading the entire request body. 
+2020-08-05 14:14:41.2171|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/suppliers application/json 1159 
+2020-08-05 14:14:41.2171|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:14:41.2171|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Suppliers"}. Executing action WebApi.Controllers.SuppliersController.Post (WebApi) 
+2020-08-05 14:14:41.2298|2|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. 
+2020-08-05 14:14:41.2298|3|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+2020-08-05 14:14:41.2298|1|INFO|Microsoft.AspNetCore.Mvc.ChallengeResult|Executing ChallengeResult with authentication schemes (). 
+2020-08-05 14:14:41.2298|12|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged. 
+2020-08-05 14:14:41.2298|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.SuppliersController.Post (WebApi) in 4.249ms 
+2020-08-05 14:14:41.2298|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:14:41.2298|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 18.4721ms 401  
+2020-08-05 14:14:41.2298|32|INFO|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HM1PB620MTVM", Request id "0HM1PB620MTVM:00000002": the application completed without reading the entire request body. 
+2020-08-05 14:23:28.7881||DEBUG|WebApi.Program|init main 
+2020-08-05 14:23:30.0685||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\rcharkhawala\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-08-05 14:23:30.7239|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-08-05 14:23:30.7239|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-08-05 14:23:30.7626|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 39.1084ms 200  
+2020-08-05 14:23:30.8565|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 133.334ms 404  
+2020-08-05 14:23:41.6290|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/users/authenticate application/json 45 
+2020-08-05 14:23:41.6382|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.UsersController.Authenticate (WebApi)' 
+2020-08-05 14:23:41.6749|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Authenticate", controller = "Users"}. Executing action WebApi.Controllers.UsersController.Authenticate (WebApi) 
+2020-08-05 14:23:41.7830|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.UsersController.Authenticate (WebApi) with arguments (DAL.Models.User) - Validation state: Valid 
+2020-08-05 14:23:41.9133|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.UsersController.Authenticate (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 126.8091ms. 
+2020-08-05 14:23:41.9215|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'DAL.Models.User'. 
+2020-08-05 14:23:41.9430|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.UsersController.Authenticate (WebApi) in 265.0502ms 
+2020-08-05 14:23:41.9430|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.UsersController.Authenticate (WebApi)' 
+2020-08-05 14:23:41.9469|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 317.8778ms 200 application/json; charset=utf-8 
+2020-08-05 14:24:16.3785|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/suppliers application/json 1159 
+2020-08-05 14:24:16.3839|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:24:16.3991|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Suppliers"}. Executing action WebApi.Controllers.SuppliersController.Post (WebApi) 
+2020-08-05 14:24:16.3991|2|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. 
+2020-08-05 14:24:16.3991|3|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+2020-08-05 14:24:16.4162|1|INFO|Microsoft.AspNetCore.Mvc.ChallengeResult|Executing ChallengeResult with authentication schemes (). 
+2020-08-05 14:24:16.4162|12|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged. 
+2020-08-05 14:24:16.4162|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.SuppliersController.Post (WebApi) in 23.8288ms 
+2020-08-05 14:24:16.4162|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:24:16.4162|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 47.1632ms 401  
+2020-08-05 14:24:16.4162|32|INFO|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HM1PDIJRPB7N", Request id "0HM1PDIJRPB7N:00000002": the application completed without reading the entire request body. 
+2020-08-05 14:24:23.1648|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/suppliers application/json 1159 
+2020-08-05 14:24:23.1791|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-08-05 14:24:23.1825|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:24:23.1825|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Suppliers"}. Executing action WebApi.Controllers.SuppliersController.Post (WebApi) 
+2020-08-05 14:24:23.1825|1|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful. 
+2020-08-05 14:24:23.2070|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.SuppliersController.Post (WebApi) with arguments (DAL.Models.Supplier) - Validation state: Valid 
+2020-08-05 14:24:38.1495|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.SuppliersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.OkResult in 14941.3009ms. 
+2020-08-05 14:24:38.1495|1|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200 
+2020-08-05 14:24:38.1495|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.SuppliersController.Post (WebApi) in 14971.4246ms 
+2020-08-05 14:24:38.1495|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:24:38.1495|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 14996.4636ms 200  
+2020-08-05 14:34:19.6068||DEBUG|WebApi.Program|init main 
+2020-08-05 14:34:20.9674||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\rcharkhawala\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-08-05 14:34:21.5989|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-08-05 14:34:21.5989|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-08-05 14:34:21.6408|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 42.3158ms 200  
+2020-08-05 14:34:21.7476|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 149.5797ms 404  
+2020-08-05 14:34:50.5167|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/suppliers application/json 1079 
+2020-08-05 14:34:50.5846|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-08-05 14:34:50.5909|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:34:50.6232|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Suppliers"}. Executing action WebApi.Controllers.SuppliersController.Post (WebApi) 
+2020-08-05 14:34:50.6232|1|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful. 
+2020-08-05 14:34:50.6905|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.SuppliersController.Post (WebApi) with arguments (DAL.Models.Supplier) - Validation state: Valid 
+2020-08-05 14:34:54.1683|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.SuppliersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3474.7078ms. 
+2020-08-05 14:34:54.1761|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String'. 
+2020-08-05 14:34:54.1850|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.SuppliersController.Post (WebApi) in 3558.4815ms 
+2020-08-05 14:34:54.1850|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:34:54.1850|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3671.9945ms 500 application/json; charset=utf-8 
+2020-08-05 14:35:41.3090||DEBUG|WebApi.Program|init main 
+2020-08-05 14:35:42.9067||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\rcharkhawala\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-08-05 14:35:43.8267|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-08-05 14:35:43.8267|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-08-05 14:35:43.8267|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/suppliers application/json 1079 
+2020-08-05 14:35:43.8773|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 50.9662ms 200  
+2020-08-05 14:35:44.0186|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 192.7492ms 404  
+2020-08-05 14:35:44.0364|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-08-05 14:35:44.0364|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:35:44.0992|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Suppliers"}. Executing action WebApi.Controllers.SuppliersController.Post (WebApi) 
+2020-08-05 14:35:44.1174|1|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful. 
+2020-08-05 14:35:44.2160|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.SuppliersController.Post (WebApi) with arguments (DAL.Models.Supplier) - Validation state: Valid 
+2020-08-05 14:35:44.3948|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.SuppliersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.OkResult in 174.7866ms. 
+2020-08-05 14:35:44.4052|1|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200 
+2020-08-05 14:35:44.4052|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.SuppliersController.Post (WebApi) in 307.6646ms 
+2020-08-05 14:35:44.4052|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.SuppliersController.Post (WebApi)' 
+2020-08-05 14:35:44.4185|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 592.6723ms 200  
+2020-08-05 14:38:25.9466|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/suppliers/1 application/json 1159 
+2020-08-05 14:38:25.9516|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-08-05 14:38:25.9516|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.SuppliersController.GetSuppliers (WebApi)' 
+2020-08-05 14:38:25.9516|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetSuppliers", controller = "Suppliers"}. Executing action WebApi.Controllers.SuppliersController.GetSuppliers (WebApi) 
+2020-08-05 14:38:25.9516|1|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful. 
+2020-08-05 14:38:25.9657|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.SuppliersController.GetSuppliers (WebApi) with arguments (1) - Validation state: Valid 
+2020-08-05 14:38:26.0304|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.SuppliersController.GetSuppliers (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 63.5451ms. 
+2020-08-05 14:38:26.0304|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Models.Supplier, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2020-08-05 14:38:26.0482|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.SuppliersController.GetSuppliers (WebApi) in 85.8922ms 
+2020-08-05 14:38:26.0482|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.SuppliersController.GetSuppliers (WebApi)' 
+2020-08-05 14:38:26.0482|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 104.9716ms 200 application/json; charset=utf-8 
+2020-08-05 14:38:26.0482|32|INFO|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HM1PDPEASVUR", Request id "0HM1PDPEASVUR:00000001": the application completed without reading the entire request body. 

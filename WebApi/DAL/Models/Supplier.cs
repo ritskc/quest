@@ -19,11 +19,7 @@ namespace DAL.Models
         public string State { get; set; }
         public string Country { get; set; }
         public string ZIPCode { get; set; }
-        public string FAXNo { get; set; }
-        public string DateFormat { get; set; }
-        public int noofstages { get; set; }
-        public int CompanyProfileID { get; set; }
-        public int PoLetterHead { get; set; }
+        public string FAXNo { get; set; }       
 
         public List<SupplierTerms> Terms { get; set; }
     }

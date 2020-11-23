@@ -14,7 +14,7 @@ using WebApi.IServices;
 
 namespace WebApi.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("[controller]")]
     [ApiController]
     public class PartsController : ControllerBase

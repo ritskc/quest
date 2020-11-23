@@ -824,9 +824,9 @@ namespace DAL.Repository
 
                 var part = partRepository.GetPart(poDetail.PartId,0);
                 poReport.PartCode = part.Code;
-                poReport.PartDescription = part.Description;              
+                poReport.PartDescription = part.Description;
 
-                poReport.PoLetterHead = supplier.PoLetterHead;
+                poReport.PoLetterHead = 1;//supplier.PoLetterHead;
 
                
                 poReport.SupplierName = supplier.Name;
