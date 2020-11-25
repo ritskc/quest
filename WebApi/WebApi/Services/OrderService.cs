@@ -1,9 +1,8 @@
-﻿using System;
+﻿using DAL.IRepository;
+using DAL.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DAL.IRepository;
-using DAL.Models;
 using WebApi.IServices;
 
 namespace WebApi.Services
@@ -13,29 +12,34 @@ namespace WebApi.Services
         private readonly IOrderRepository _orderRepository;
         private readonly IPartRepository _partRepository;
         private readonly IPackingSlipService _packingSlipService;
+        private readonly IEntityTrackerRepository entityTrackerRepository;
 
-        public OrderService(IOrderRepository orderRepository, IPartRepository partRepository, IPackingSlipService packingSlipService)
+        public OrderService(IOrderRepository orderRepository, IPartRepository partRepository, IPackingSlipService packingSlipService,
+            IEntityTrackerRepository entityTrackerRepository)
         {
             _orderRepository = orderRepository;
             _partRepository = partRepository;
             _packingSlipService = packingSlipService;
+            this.entityTrackerRepository = entityTrackerRepository;
         }
         public async Task<long> AddOrderMasterAsync(OrderMaster order)
         {
+            var entity = await this.entityTrackerRepository.GetEntityAsync(order.CompanyId, order.PoDate, BusinessConstants.ENTITY_TRACKER_ORDER);
+            order.PONo = entity.EntityNo;
             return await this._orderRepository.AddOrderMasterAsync(order);
         }
 
         public async Task DeleteOrderMasterAsync(long orderId)
         {
-            await this._orderRepository.DeleteOrderMasterAsync(orderId);            
+            await this._orderRepository.DeleteOrderMasterAsync(orderId);
         }
 
-        public async Task<IEnumerable<OrderMaster>> GetAllOrderMastersAsync(int companyId,int userId)
+        public async Task<IEnumerable<OrderMaster>> GetAllOrderMastersAsync(int companyId, int userId)
         {
             //return await this.orderRepository.GetAllOrderMastersAsync(companyId);
 
-            var result = await this._orderRepository.GetAllOrderMastersAsync(companyId,userId);
-            var packingSlips = await this._packingSlipService.GetAllPackingSlipsAsync(companyId, result.FirstOrDefault().WarehouseId,userId);
+            var result = await this._orderRepository.GetAllOrderMastersAsync(companyId, userId);
+            var packingSlips = await this._packingSlipService.GetAllPackingSlipsAsync(companyId, result.FirstOrDefault().WarehouseId, userId);
             foreach (OrderMaster pos in result)
             {
                 foreach (OrderDetail poDetail in pos.OrderDetails)
@@ -58,7 +62,7 @@ namespace WebApi.Services
                             }
                         }
                     }
-                   
+
                 }
             }
             return result;
@@ -79,12 +83,17 @@ namespace WebApi.Services
 
         public async Task UpdateOrderAsync(int id, string path)
         {
-            await this._orderRepository.UpdateOrderAsync(id,path);
+            await this._orderRepository.UpdateOrderAsync(id, path);
         }
 
         public async Task UpdateOrderMasterAsync(OrderMaster order)
         {
             await this._orderRepository.UpdateOrderMasterAsync(order);
+        }
+
+        public async Task CloseOrderMasterAsync(OrderMaster order)
+        {
+            await this._orderRepository.CloseOrderMasterAsync(order);
         }
     }
 }

@@ -28,11 +28,11 @@ namespace Report.Services
         {
             ISqlHelper sqlHelper = new SqlHelper();
             IPriviledgeRepository priviledgeRepository = new PriviledgeRepository(sqlHelper);
-            IUserRepository userRepository = new UserRepository(priviledgeRepository);
-            IOrderRepository oRepository = new OrderRepository(sqlHelper, userRepository);
-            ICompanyRepository companyRepository = new CompanyRepository(sqlHelper);
-            IPartRepository partRepository = new PartRepository(sqlHelper, userRepository, companyRepository);
             IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            IUserRepository userRepository = new UserRepository(priviledgeRepository);
+            IOrderRepository oRepository = new OrderRepository(sqlHelper, userRepository, entityTrackerRepository);
+            ICompanyRepository companyRepository = new CompanyRepository(sqlHelper);
+            IPartRepository partRepository = new PartRepository(sqlHelper, userRepository, companyRepository);            
             ICustomerRepository customerRepository = new CustomerRepository(sqlHelper, userRepository);
             ITransactionRepository transactionRepository = new TransactionRepository();
             IUserActivityReportRepository userActivityRepository = new UserActivityReportRepository(sqlHelper);
@@ -48,10 +48,11 @@ namespace Report.Services
             ISqlHelper sqlHelper = new SqlHelper();
             IPriviledgeRepository priviledgeRepository = new PriviledgeRepository(sqlHelper);
             IUserRepository userRepository = new UserRepository(priviledgeRepository);
-            IOrderRepository oRepository = new OrderRepository(sqlHelper, userRepository);
+            IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            IOrderRepository oRepository = new OrderRepository(sqlHelper, userRepository, entityTrackerRepository);
             ICompanyRepository companyRepository = new CompanyRepository(sqlHelper);
             IPartRepository partRepository = new PartRepository(sqlHelper, userRepository, companyRepository);
-            IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            
             ICustomerRepository customerRepository = new CustomerRepository(sqlHelper, userRepository);
             ITransactionRepository transactionRepository = new TransactionRepository();
             IPoRepository poRepository = new PoRepository(sqlHelper, entityTrackerRepository, userRepository);
@@ -72,10 +73,11 @@ namespace Report.Services
             ISqlHelper sqlHelper = new SqlHelper();
             PriviledgeRepository priviledgeRepository = new PriviledgeRepository(sqlHelper);
             IUserRepository userRepository = new UserRepository(priviledgeRepository);
-            IOrderRepository oRepository = new OrderRepository(sqlHelper, userRepository);
+            IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            IOrderRepository oRepository = new OrderRepository(sqlHelper, userRepository, entityTrackerRepository);
             ICompanyRepository companyRepository = new CompanyRepository(sqlHelper);
             IPartRepository partRepository = new PartRepository(sqlHelper, userRepository, companyRepository);
-            IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            
             ICustomerRepository customerRepository = new CustomerRepository(sqlHelper, userRepository);
             ITransactionRepository transactionRepository = new TransactionRepository();
             IPoRepository poRepository = new PoRepository(sqlHelper, entityTrackerRepository, userRepository);
@@ -96,7 +98,8 @@ namespace Report.Services
             ISqlHelper sqlHelper = new SqlHelper();
             PriviledgeRepository priviledgeRepository = new PriviledgeRepository(sqlHelper);
             IUserRepository userRepository = new UserRepository(priviledgeRepository);
-            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository);
+            IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository, entityTrackerRepository);
             ICompanyRepository companyRepository = new CompanyRepository(sqlHelper);
             ICustomerRepository customerRepository = new CustomerRepository(sqlHelper, userRepository);
             ISupplierRepository supplierRepository = new SupplierRepository(sqlHelper, userRepository);
@@ -113,7 +116,8 @@ namespace Report.Services
             ISqlHelper sqlHelper = new SqlHelper();
             PriviledgeRepository priviledgeRepository = new PriviledgeRepository(sqlHelper);
             IUserRepository userRepository = new UserRepository(priviledgeRepository);
-            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository);
+            IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository, entityTrackerRepository);
             ICompanyRepository companyRepository = new CompanyRepository(sqlHelper);
             ICustomerRepository customerRepository = new CustomerRepository(sqlHelper, userRepository);
             ISupplierRepository supplierRepository = new SupplierRepository(sqlHelper, userRepository);
@@ -130,7 +134,8 @@ namespace Report.Services
             ISqlHelper sqlHelper = new SqlHelper();
             PriviledgeRepository priviledgeRepository = new PriviledgeRepository(sqlHelper);
             IUserRepository userRepository = new UserRepository(priviledgeRepository);
-            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository);
+            IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository, entityTrackerRepository);
             ICompanyRepository companyRepository = new CompanyRepository(sqlHelper);
             ICustomerRepository customerRepository = new CustomerRepository(sqlHelper, userRepository);
             IPartRepository partRepository = new PartRepository(sqlHelper, userRepository, companyRepository);
@@ -147,7 +152,8 @@ namespace Report.Services
             ISqlHelper sqlHelper = new SqlHelper();
             PriviledgeRepository priviledgeRepository = new PriviledgeRepository(sqlHelper);
             IUserRepository userRepository = new UserRepository(priviledgeRepository);
-            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository);
+            IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository, entityTrackerRepository);
             ICompanyRepository companyRepository = new CompanyRepository(sqlHelper);
             ICustomerRepository customerRepository = new CustomerRepository(sqlHelper, userRepository);
             ISupplierRepository supplierRepository = new SupplierRepository(sqlHelper, userRepository);
@@ -164,7 +170,8 @@ namespace Report.Services
             ISqlHelper sqlHelper = new SqlHelper();
             PriviledgeRepository priviledgeRepository = new PriviledgeRepository(sqlHelper);
             IUserRepository userRepository = new UserRepository(priviledgeRepository);
-            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository);
+            IEntityTrackerRepository entityTrackerRepository = new EntityTrackerRepository(sqlHelper);
+            IOrderRepository orderRepository = new OrderRepository(sqlHelper, userRepository, entityTrackerRepository);
             ICompanyRepository companyRepository = new CompanyRepository(sqlHelper);
             ICustomerRepository customerRepository = new CustomerRepository(sqlHelper, userRepository);
             ISupplierRepository supplierRepository = new SupplierRepository(sqlHelper, userRepository);

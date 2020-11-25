@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL.Repository
@@ -16,12 +15,14 @@ namespace DAL.Repository
     {
         private readonly ISqlHelper _sqlHelper;
         private readonly IUserRepository userRepository;
+        private readonly IEntityTrackerRepository entityTrackerRepository;
 
-        public OrderRepository(ISqlHelper sqlHelper, IUserRepository userRepository)
+        public OrderRepository(ISqlHelper sqlHelper, IUserRepository userRepository, IEntityTrackerRepository entityTrackerRepository)
         {
             _sqlHelper = sqlHelper;
             this.userRepository = userRepository;
-        }       
+            this.entityTrackerRepository = entityTrackerRepository;
+        }
 
         public async Task<IEnumerable<OrderMaster>> GetAllOrderMastersAsync(int companyId, int userId)
         {
@@ -38,14 +39,14 @@ namespace DAL.Repository
                 string companylist = string.Join(",", userInfo.CompanyIds);
 
                 commandText = string.Format("SELECT [Id] ,[CompanyId] ,[CustomerId] ,[IsBlanketPO] ,[PONo] ,[PODate] ,[DueDate] ,[Remarks],[IsClosed] ,[ClosingDate]  FROM [dbo].[OrderMaster] where CompanyId = '{0}'  " +
-                    "and  [CustomerId] in ({1}) ", companyId, companylist);               
+                    "and  [CustomerId] in ({1}) ", companyId, companylist);
             }
             if (userInfo.UserTypeId == 3)
             {
                 return orders;
             }
 
-            SqlConnection conn = new SqlConnection(ConnectionSettings.ConnectionString);            
+            SqlConnection conn = new SqlConnection(ConnectionSettings.ConnectionString);
 
             using (SqlCommand cmd = new SqlCommand(commandText, conn))
             {
@@ -124,12 +125,12 @@ namespace DAL.Repository
                         orderDetails.Add(orderDetail);
                     }
                     dataReader1.Close();
-                }                
+                }
                 order.OrderDetails = orderDetails;
                 conn.Close();
             }
 
-            return orders.OrderBy(x=>x.PoDate);
+            return orders.OrderBy(x => x.PoDate);
         }
 
         public async Task<OrderMaster> GetOrderMasterAsync(long orderId)
@@ -221,9 +222,9 @@ namespace DAL.Repository
             OrderMaster order = new OrderMaster();
             var commandText = string.Format("SELECT [Id] ,[CompanyId] ,[CustomerId] ,[IsBlanketPO] ,[PONo] ,[PODate] ,[DueDate] ,[Remarks],[IsClosed] ,[ClosingDate]  FROM [dbo].[OrderMaster] where Id = '{0}' ", orderId);
 
-            using (SqlCommand cmd = new SqlCommand(commandText, conn,transaction))
+            using (SqlCommand cmd = new SqlCommand(commandText, conn, transaction))
             {
-                cmd.CommandType = CommandType.Text;              
+                cmd.CommandType = CommandType.Text;
 
                 var dataReader = await cmd.ExecuteReaderAsync(CommandBehavior.Default);
 
@@ -240,7 +241,7 @@ namespace DAL.Repository
                     if (dataReader["IsClosed"] != DBNull.Value)
                         order.IsClosed = Convert.ToBoolean(dataReader["IsClosed"]);
                     else
-                        order.IsClosed =false;
+                        order.IsClosed = false;
                     if (dataReader["ClosingDate"] != DBNull.Value)
                         order.ClosingDate = Convert.ToDateTime(dataReader["ClosingDate"]);
                     else
@@ -255,9 +256,9 @@ namespace DAL.Repository
             commandText = string.Format("SELECT [Id] ,[OrderId] ,[PartId] ,[BlanketPOId] ,[BlanketPOAdjQty] ,[LineNumber] ,[Qty] ,[UnitPrice] " +
                 ",[DueDate] ,[Note],[ShippedQty],[IsClosed] ,[ClosingDate],[SrNo],[IsForceClosed]  FROM [dbo].[OrderDetail]  where orderid = '{0}'", order.Id);
 
-            using (SqlCommand cmd1 = new SqlCommand(commandText, conn,transaction))
+            using (SqlCommand cmd1 = new SqlCommand(commandText, conn, transaction))
             {
-                cmd1.CommandType = CommandType.Text;               
+                cmd1.CommandType = CommandType.Text;
                 var dataReader1 = cmd1.ExecuteReader(CommandBehavior.Default);
 
                 while (dataReader1.Read())
@@ -293,7 +294,7 @@ namespace DAL.Repository
                 dataReader1.Close();
             }
             order.OrderDetails = orderDetails;
-            
+
             return order;
         }
 
@@ -332,7 +333,7 @@ namespace DAL.Repository
                         command.CommandText = sql;
                         await command.ExecuteNonQueryAsync();
                     }
-
+                    await entityTrackerRepository.AddEntityAsync(order.CompanyId, order.PoDate, BusinessConstants.ENTITY_TRACKER_ORDER, command.Connection, command.Transaction, command);
                     // Attempt to commit the transaction.
                     transaction.Commit();
                 }
@@ -343,7 +344,7 @@ namespace DAL.Repository
                 }
                 return orderId;
             }
-        }        
+        }
 
         public async Task UpdateOrderMasterAsync(OrderMaster order)
         {
@@ -371,7 +372,7 @@ namespace DAL.Repository
                     foreach (OrderDetail orderDetail in orderResult.OrderDetails)
                     {
                         var deleteLine = order.OrderDetails.Where(x => x.Id == orderDetail.Id).FirstOrDefault();
-                        if(deleteLine == null)
+                        if (deleteLine == null)
                         {
                             var sql1 = string.Format($"DELETE [dbo].[OrderDetail]   WHERE id = '{orderDetail.Id}' ");
                             command.CommandText = sql1;
@@ -422,6 +423,54 @@ namespace DAL.Repository
                         command.CommandText = sql;
                         await command.ExecuteNonQueryAsync();
                         //await _sqlHelper.ExecuteNonQueryAsync(ConnectionSettings.ConnectionString, sql, CommandType.Text);
+                    }
+
+                    // Attempt to commit the transaction.
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    throw ex;
+                }
+            }
+        }
+
+        public async Task CloseOrderMasterAsync(OrderMaster order)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionSettings.ConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = connection.CreateCommand();
+                SqlTransaction transaction;
+
+                // Start a local transaction.
+                transaction = connection.BeginTransaction(IsolationLevel.ReadUncommitted, "SampleTransaction");
+
+                // Must assign both transaction object and connection
+                // to Command object for a pending local transaction
+                command.Connection = connection;
+                command.Transaction = transaction;
+
+                try
+                { 
+                   
+
+                    var sql = string.Format($"UPDATE [dbo].[OrderMaster]   SET [IsClosed] = '{true}' ,[ClosingDate] = '{DateTime.Now}', [Remarks] = '{order.Remarks}'  WHERE id = '{order.Id}' ");
+                    command.CommandText = sql;
+                    await command.ExecuteNonQueryAsync();
+
+                    foreach (OrderDetail orderDetail in order.OrderDetails)
+                    {
+                        sql = string.Format($"UPDATE [dbo].[OrderDetail]   SET  [IsClosed] = '{true}' ,[ShippedQty] = '{orderDetail.ShippedQty}'  , [DueDate] = '{orderDetail.ClosingDate}' ,[Note] = '{orderDetail.Note}',[ClosingDate] ='{DateTime.Now}'  WHERE id = '{orderDetail.Id}'"); 
+                        command.CommandText = sql;
+                        await command.ExecuteNonQueryAsync();
+
+                        //sql = string.Format($"UPDATE [dbo].[part]   SET [QtyInHand] =  QtyInHand - '{orderDetail.Qty}'  WHERE id = '{orderDetail.PartId}' ");
+                        //command.CommandText = sql;
+                        //await command.ExecuteNonQueryAsync();
+
                     }
 
                     // Attempt to commit the transaction.

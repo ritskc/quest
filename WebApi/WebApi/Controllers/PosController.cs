@@ -116,11 +116,11 @@ namespace WebApi.Controllers
                 po.AccessId = Guid.NewGuid().ToString();
                 await this._poService.AddPoAsync(po);
 
-                var company = await this.companyService.GetCompanyAsync(po.CompanyId);
-                po.CompanyName = company.Name;
+                //var company = await this.companyService.GetCompanyAsync(po.CompanyId);
+                //po.CompanyName = company.Name;
 
-                EmailService emailService = new EmailService(_appSettings);
-                emailService.SendAcknoledgePOEmail(po.CompanyName,po.SupplierName,po.ContactPersonName,_appSettings.POURL + po.AccessId,po.PoNo);
+                //EmailService emailService = new EmailService(_appSettings);
+                //emailService.SendAcknoledgePOEmail(po.CompanyName,po.SupplierName,po.ContactPersonName,_appSettings.POURL + po.AccessId,po.PoNo);
                 return Ok();
             }
             catch (Exception ex)
@@ -227,11 +227,11 @@ namespace WebApi.Controllers
 
                 await this._poService.UpdatePoAsync(po);
 
-                var company = await this.companyService.GetCompanyAsync(po.CompanyId);
-                po.CompanyName = company.Name;
+                //var company = await this.companyService.GetCompanyAsync(po.CompanyId);
+                //po.CompanyName = company.Name;
 
-                EmailService emailService = new EmailService(_appSettings);
-                emailService.SendAcknoledgePOEmail(po.CompanyName, po.SupplierName, po.ContactPersonName, _appSettings.POURL + po.AccessId, po.PoNo);
+                //EmailService emailService = new EmailService(_appSettings);
+                //emailService.SendAcknoledgePOEmail(po.CompanyName, po.SupplierName, po.ContactPersonName, _appSettings.POURL + po.AccessId, po.PoNo);
 
                 return Ok();
             }

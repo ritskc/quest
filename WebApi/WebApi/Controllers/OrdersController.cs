@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using DAL.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using WebApi.IServices;
+using WebApi.Settings;
+using WebApi.Utils;
 
 namespace WebApi.Controllers
 {
@@ -16,11 +19,19 @@ namespace WebApi.Controllers
     {
         private readonly IOrderService _orderService;
         private readonly IPartService _partService;
+        private readonly AppSettings _appSettings;
+        private readonly ICompanyService _companyService;
+        private readonly ICustomerService _customerService;
 
-        public OrdersController(IOrderService orderService, IPartService partService)
+        public OrdersController(IOrderService orderService, IPartService partService, IOptions<AppSettings> appSettings,
+            ICompanyService companyService, ICustomerService customerService)
         {
             this._orderService = orderService;
             this._partService = partService;
+            this._appSettings = appSettings.Value;
+            this._customerService = customerService;
+            this._companyService = companyService;
+
         }
 
         // GET: api/Todo
@@ -77,14 +88,20 @@ namespace WebApi.Controllers
                 var claimsIdentity = this.User.Identity as ClaimsIdentity;
                 int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
 
-                var pos = await this._orderService.GetAllOrderMastersAsync(po.CompanyId, userId);
-                var existpo = pos.Where(x => x.PONo == po.PONo).FirstOrDefault();
+                //var pos = await this._orderService.GetAllOrderMastersAsync(po.CompanyId, userId);
+                //var existpo = pos.Where(x => x.PONo == po.PONo).FirstOrDefault();
 
-                if(existpo != null && existpo.PONo == po.PONo)
-                {
-                    return BadRequest("PO already exist");
-                }
+                //if(existpo != null && existpo.PONo == po.PONo)
+                //{
+                //    return BadRequest("PO already exist");
+                //}
                 var result= await this._orderService.AddOrderMasterAsync(po);
+
+                EmailService emailService = new EmailService(_appSettings);
+                var company = await this._companyService.GetCompanyAsync(po.CompanyId);
+                var customer = await this._customerService.GetCustomerAsync(po.CustomerId);
+                emailService.SendAcknoledgePOEmail(company.EMail, customer.EmailAddress, po.PONo);
+
                 return result;
             }
             catch (Exception ex)
@@ -176,6 +193,36 @@ namespace WebApi.Controllers
                 }
 
                 await this._orderService.UpdateOrderMasterAsync(po);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.ToString());
+            }
+        }
+
+        // PUT api/values/5
+        [HttpPut("{Status}/{id}")]
+        public async Task<IActionResult> PutClose(int id, [FromBody] OrderMaster po)
+        {
+            try
+            {
+                var claimsIdentity = this.User.Identity as ClaimsIdentity;
+                int userId = Convert.ToInt32(claimsIdentity.FindFirst(ClaimTypes.Name)?.Value);
+
+                if (id != po.Id)
+                {
+                    return BadRequest();
+                }
+
+                po.Id = id;
+                await this._orderService.CloseOrderMasterAsync(po);
+
+                EmailService emailService = new EmailService(_appSettings);
+                var company = await this._companyService.GetCompanyAsync(po.CompanyId);
+                var customer = await this._customerService.GetCustomerAsync(po.CustomerId);
+                emailService.SendClosePOEmail(company.EMail, customer.EmailAddress, po.PONo);
 
                 return Ok();
             }

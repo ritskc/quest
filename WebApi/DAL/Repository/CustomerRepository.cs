@@ -387,7 +387,7 @@ namespace DAL.Repository
                 $"'{customer.Name.Replace("'", "''")}', '{customer.AddressLine1.Replace("'", "''")}', '{customer.City.Replace("'", "''")}', '{customer.State.Replace("'", "''")}', '{customer.ZIPCode.Replace("'", "''")}', '{customer.ContactPersonName.Replace("'", "''")}', '{customer.TelephoneNumber.Replace("'", "''")}',     " +
                 $"'{customer.FaxNumber.Replace("'", "''")}', '{customer.EmailAddress.Replace("'", "''")}', '{customer.TruckType.Replace("'", "''")}', '{customer.CollectFreight.Replace("'", "''")}', " +
                 $"'{customer.Comments.Replace("'", "''")}', '{customer.Surcharge}', '{customer.FOB.Replace("'", "''")}', '{customer.Terms.Replace("'", "''")}',  '{customer.RePackingCharge}', " +
-                $"'{customer.ShipVia.Replace("'", "''")}', '{customer.Invoicingtypeid}', '{customer.EndCustomerName.Replace("'", "''")}','{ customer.DisplayLineNo}','{ customer.Billing.Replace("'", "''")}','{ customer.RePackingPoNo.Replace("'", "''")}')");
+                $"'{customer.ShipVia.Replace("'", "''")}', '{1}', '{customer.EndCustomerName.Replace("'", "''")}','{ customer.DisplayLineNo}','{ customer.Billing.Replace("'", "''")}','{ string.Empty}')");
 
             sql = sql + " Select Scope_Identity()";
 
@@ -468,7 +468,7 @@ namespace DAL.Repository
                     $"      ,[TelephoneNumber] = '{customer.TelephoneNumber}' ,[FaxNumber] = '{customer.FaxNumber}',[EmailAddress] = '{customer.EmailAddress}' ,[TruckType] = '{customer.TruckType}'" +
                     $"  ,[CollectFreight] = '{customer.CollectFreight}',[Comments] = '{customer.Comments.Replace("'", "''")}' ,[Surcharge] = '{customer.Surcharge}' ,[FOB] = '{customer.FOB}'" +
                     $" ,[Terms] = '{customer.Terms}',[RePackingCharge] = '{customer.RePackingCharge}',[ShipVia] = '{customer.ShipVia.Replace("'", "''")}' ,[invoicingtypeid] = '{customer.Invoicingtypeid}'" +
-                    $"   ,[endcustomername] = '{customer.EndCustomerName.Replace("'", "''")}' ,[DisplayLineNo] = '{customer.DisplayLineNo}',[Billing] = '{customer.Billing.Replace("'","''")}' ,[RePackingPoNo] = '{customer.RePackingPoNo.Replace("'", "''")}' WHERE[Id] = '{customer.Id}' ");
+                    $"   ,[endcustomername] = '{customer.EndCustomerName.Replace("'", "''")}' ,[DisplayLineNo] = '{customer.DisplayLineNo}',[Billing] = '{customer.Billing.Replace("'","''")}' ,[RePackingPoNo] = '{string.Empty}' WHERE[Id] = '{customer.Id}' ");
                 await _sqlHelper.ExecuteNonQueryAsync(ConnectionSettings.ConnectionString, sql, CommandType.Text);
 
                 foreach (CustomerShippingInfo term in customer.ShippingInfos)

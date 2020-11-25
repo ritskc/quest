@@ -1,0 +1,304 @@
+2020-11-24 14:16:19.6876||DEBUG|WebApi.Program|init main 
+2020-11-24 14:16:21.4853||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 14:16:22.3683|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 14:16:22.3683|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders/1 application/json 910 
+2020-11-24 14:16:22.3683|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 14:16:22.4158|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 47.2741ms 200  
+2020-11-24 14:16:22.5565|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 188.7045ms 404  
+2020-11-24 14:16:22.5857|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 14:16:22.5857|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '405 HTTP Method Not Supported' 
+2020-11-24 14:16:22.5857|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '405 HTTP Method Not Supported' 
+2020-11-24 14:16:22.5857|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 229.4505ms 405  
+2020-11-24 14:16:22.6082|32|INFO|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HM4GLLN0E3LB", Request id "0HM4GLLN0E3LB:00000001": the application completed without reading the entire request body. 
+2020-11-24 14:16:34.5047|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 14:16:34.5047|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 14:16:34.5073|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:16:34.5476|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 14:16:34.6157|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 14:16:52.3923|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 17772.5449ms. 
+2020-11-24 14:16:52.4078|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Int64'. 
+2020-11-24 14:16:52.4251|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 17873.0896ms 
+2020-11-24 14:16:52.4251|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:16:52.4349|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 17930.1379ms 200 application/json; charset=utf-8 
+2020-11-24 14:28:22.1834||DEBUG|WebApi.Program|init main 
+2020-11-24 14:28:23.6314||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 14:28:24.2916|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 14:28:24.2916|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 14:28:24.3363|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 45.0079ms 200  
+2020-11-24 14:28:24.4539|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 163.0161ms 404  
+2020-11-24 14:28:33.7346|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 14:28:33.8240|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 14:28:33.8240|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:28:33.8746|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 14:28:33.9787|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 14:30:08.1725||DEBUG|WebApi.Program|init main 
+2020-11-24 14:30:09.3374||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 14:30:10.1281|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 14:30:10.1281|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 14:30:10.1777|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 50.2231ms 200  
+2020-11-24 14:30:10.2630|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 136.2549ms 404  
+2020-11-24 14:30:14.9283|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 14:30:15.0342|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 14:30:15.0446|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:30:15.1050|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 14:30:15.2356|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 14:30:26.3392|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 11099.6969ms. 
+2020-11-24 14:30:26.3553|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String'. 
+2020-11-24 14:30:26.3738|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 11264.7807ms 
+2020-11-24 14:30:26.3738|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:30:26.3851|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 11456.8487ms 500 application/json; charset=utf-8 
+2020-11-24 14:30:52.7372|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 14:30:52.7445|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 14:30:52.7445|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:30:52.7445|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 14:30:52.7445|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 14:31:34.7401||DEBUG|WebApi.Program|init main 
+2020-11-24 14:31:36.1391||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 14:31:36.9979|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 14:31:36.9979|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 14:31:37.0581|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 60.6713ms 200  
+2020-11-24 14:31:37.1532|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 156.2847ms 404  
+2020-11-24 14:31:40.2546|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 14:31:40.3424|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 14:31:40.3558|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:31:40.4150|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 14:31:40.5290|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 14:31:52.4448|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 11912.2518ms. 
+2020-11-24 14:31:52.4448|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Int64'. 
+2020-11-24 14:31:52.4750|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 12055.7132ms 
+2020-11-24 14:31:52.4773|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:31:52.4773|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 12229.844ms 200 application/json; charset=utf-8 
+2020-11-24 14:36:58.3880||DEBUG|WebApi.Program|init main 
+2020-11-24 14:36:59.5972||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 14:37:00.3690|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 14:37:00.3690|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 14:37:00.4435|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 75.0066ms 200  
+2020-11-24 14:37:00.5643|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 196.1631ms 404  
+2020-11-24 14:37:15.4720|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 14:37:15.5927|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 14:37:15.6085|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:37:15.6614|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 14:37:15.7738|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 14:37:27.5534|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 11774.7473ms. 
+2020-11-24 14:37:27.5738|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Int64'. 
+2020-11-24 14:37:27.5878|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 11921.7538ms 
+2020-11-24 14:37:27.5878|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:37:27.5878|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 12125.5198ms 200 application/json; charset=utf-8 
+2020-11-24 14:37:57.0155|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 14:37:57.0237|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 14:37:57.0237|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:37:57.0237|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 14:37:57.0237|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 14:38:18.6749|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 21645.668ms. 
+2020-11-24 14:38:18.6749|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Int64'. 
+2020-11-24 14:38:18.6850|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 21658.7408ms 
+2020-11-24 14:38:18.6850|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 14:38:18.6850|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 21670.9058ms 200 application/json; charset=utf-8 
+2020-11-24 15:31:17.2350||DEBUG|WebApi.Program|init main 
+2020-11-24 15:31:18.3086||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 15:31:18.9971|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 15:31:18.9971|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 15:31:19.0328|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 35.7962ms 200  
+2020-11-24 15:31:19.1049|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 108.5293ms 404  
+2020-11-24 15:31:19.6940|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 15:31:19.8122|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 15:31:19.8122|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:31:19.8599|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 15:31:19.9415|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 15:32:02.6123|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 42668.6104ms. 
+2020-11-24 15:32:02.6215|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Int64'. 
+2020-11-24 15:32:02.6361|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 42773.1575ms 
+2020-11-24 15:32:02.6361|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:32:02.6361|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 42949.6657ms 200 application/json; charset=utf-8 
+2020-11-24 15:33:00.4325|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 15:33:00.4325|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 15:33:00.4325|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:33:00.4480|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 15:33:00.4777|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 15:33:14.5360|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 14057.694ms. 
+2020-11-24 15:33:14.5360|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String'. 
+2020-11-24 15:33:14.5360|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 14086.9667ms 
+2020-11-24 15:33:14.5381|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:33:14.5381|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 14106.1779ms 500 application/json; charset=utf-8 
+2020-11-24 15:34:27.7489|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 15:34:27.7489|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 15:34:27.7577|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:34:27.7577|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 15:34:27.7577|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 15:38:28.1206||DEBUG|WebApi.Program|init main 
+2020-11-24 15:38:29.1939||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 15:38:29.6520|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 15:38:29.6520|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 15:38:29.6519|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 15:38:29.6814|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 29.6165ms 200  
+2020-11-24 15:38:29.7873|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 136.0005ms 404  
+2020-11-24 15:38:29.8039|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 15:38:29.8039|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:38:29.8427|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 15:38:29.9141|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 15:39:41.0132||DEBUG|WebApi.Program|init main 
+2020-11-24 15:39:41.7339||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 15:39:42.2626|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 15:39:42.2626|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 15:39:42.2891|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 26.6981ms 200  
+2020-11-24 15:39:42.3852|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 123.0311ms 404  
+2020-11-24 15:39:45.1737|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 15:39:45.2200|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 15:39:45.2200|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:39:45.2469|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 15:39:45.2904|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 15:39:52.2877|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6995.365ms. 
+2020-11-24 15:39:52.2967|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Int64'. 
+2020-11-24 15:39:52.3041|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 7055.176ms 
+2020-11-24 15:39:52.3041|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:39:52.3041|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 7135.7982ms 200 application/json; charset=utf-8 
+2020-11-24 15:40:48.7346|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 15:40:48.7346|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 15:40:48.7346|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:40:48.7423|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 15:40:48.7423|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 15:40:52.4507|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3705.878ms. 
+2020-11-24 15:40:52.4507|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Int64'. 
+2020-11-24 15:40:52.4507|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 3709.8934ms 
+2020-11-24 15:40:52.4507|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:40:52.4507|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3719.0575ms 200 application/json; charset=utf-8 
+2020-11-24 15:41:39.5660|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 15:41:39.5703|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 15:41:39.5703|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:41:39.5703|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 15:41:39.5703|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 15:41:42.8512|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3275.6128ms. 
+2020-11-24 15:41:42.8512|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Int64'. 
+2020-11-24 15:41:42.8512|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 3277.6413ms 
+2020-11-24 15:41:42.8512|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 15:41:42.8512|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3287.2548ms 200 application/json; charset=utf-8 
+2020-11-24 15:58:13.0104||DEBUG|WebApi.Program|init main 
+2020-11-24 15:58:13.9341||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 15:58:14.5381|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 15:58:14.5381|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 15:58:14.5921|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 54.3319ms 200  
+2020-11-24 15:58:14.6445|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 106.8972ms 404  
+2020-11-24 15:59:50.5890|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:44390/orders/close/357 application/json 911 
+2020-11-24 15:59:50.6793|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 15:59:50.6839|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 15:59:50.7064|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "PutClose", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.PutClose (WebApi) 
+2020-11-24 15:59:50.7587|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.PutClose (WebApi) with arguments (357, DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 15:59:50.7587|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.PutClose (WebApi), returned result Microsoft.AspNetCore.Mvc.BadRequestResult in 3.1253ms. 
+2020-11-24 15:59:50.7587|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'. 
+2020-11-24 15:59:50.7835|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.PutClose (WebApi) in 74.8568ms 
+2020-11-24 15:59:50.7835|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 15:59:50.7835|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 196.1312ms 400 application/problem+json; charset=utf-8 
+2020-11-24 16:00:24.3460|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:44390/orders/close/357 application/json 913 
+2020-11-24 16:00:24.3460|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 16:00:24.3533|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:00:24.3533|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "PutClose", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.PutClose (WebApi) 
+2020-11-24 16:00:24.3533|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.PutClose (WebApi) with arguments (357, DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 16:00:26.3340|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.PutClose (WebApi), returned result Microsoft.AspNetCore.Mvc.OkResult in 1977.6644ms. 
+2020-11-24 16:00:26.3379|1|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200 
+2020-11-24 16:00:26.3379|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.PutClose (WebApi) in 1985.2161ms 
+2020-11-24 16:00:26.3379|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:00:26.3379|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1997.4809ms 200  
+2020-11-24 16:17:05.8983||DEBUG|WebApi.Program|init main 
+2020-11-24 16:17:06.8004||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 16:17:07.3163|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 16:17:07.3163|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 16:17:07.3477|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 31.8885ms 200  
+2020-11-24 16:17:07.4172|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 101.6626ms 404  
+2020-11-24 16:17:08.4150|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:44390/orders/close/357 application/json 913 
+2020-11-24 16:17:08.4638|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 16:17:08.4638|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:17:08.4926|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "PutClose", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.PutClose (WebApi) 
+2020-11-24 16:17:08.5369|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.PutClose (WebApi) with arguments (357, DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 16:17:08.6919|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.PutClose (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 152.9401ms. 
+2020-11-24 16:17:08.6998|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String'. 
+2020-11-24 16:17:08.6998|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.PutClose (WebApi) in 212.1754ms 
+2020-11-24 16:17:08.6998|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:17:08.7128|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 297.8359ms 500 application/json; charset=utf-8 
+2020-11-24 16:17:36.9435||DEBUG|WebApi.Program|init main 
+2020-11-24 16:17:38.0543||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 16:17:38.5919|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 16:17:38.5919|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 16:17:38.6319|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 39.3219ms 200  
+2020-11-24 16:17:38.7063|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 115.2207ms 404  
+2020-11-24 16:17:39.9228|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:44390/orders/close/357 application/json 913 
+2020-11-24 16:17:39.9723|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 16:17:39.9786|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:17:40.0082|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "PutClose", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.PutClose (WebApi) 
+2020-11-24 16:17:40.0673|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.PutClose (WebApi) with arguments (357, DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 16:17:40.2616|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.PutClose (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 190.991ms. 
+2020-11-24 16:17:40.2730|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String'. 
+2020-11-24 16:17:40.2730|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.PutClose (WebApi) in 271.7156ms 
+2020-11-24 16:17:40.2730|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:17:40.2902|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 367.4237ms 500 application/json; charset=utf-8 
+2020-11-24 16:18:12.2296||DEBUG|WebApi.Program|init main 
+2020-11-24 16:18:13.2264||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 16:18:13.7404|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 16:18:13.7404|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 16:18:13.7691|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 28.7754ms 200  
+2020-11-24 16:18:13.8497|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 109.7909ms 404  
+2020-11-24 16:18:18.4970|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:44390/orders/close/357 application/json 913 
+2020-11-24 16:18:18.5464|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 16:18:18.5464|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:18:18.5760|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "PutClose", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.PutClose (WebApi) 
+2020-11-24 16:18:18.6390|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.PutClose (WebApi) with arguments (357, DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 16:18:18.8036|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.PutClose (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 161.9989ms. 
+2020-11-24 16:18:18.8124|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String'. 
+2020-11-24 16:18:18.8210|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.PutClose (WebApi) in 241.8201ms 
+2020-11-24 16:18:18.8210|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:18:18.8210|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 328.9036ms 500 application/json; charset=utf-8 
+2020-11-24 16:24:50.4040||DEBUG|WebApi.Program|init main 
+2020-11-24 16:24:51.4537||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ritsk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-11-24 16:24:51.9104|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44390/api/values   
+2020-11-24 16:24:51.9104|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:52652/  0 
+2020-11-24 16:24:51.9365|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 26.5482ms 200  
+2020-11-24 16:24:51.9992|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 89.5805ms 404  
+2020-11-24 16:24:53.5765|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:44390/orders/close/357 application/json 913 
+2020-11-24 16:24:53.6234|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 16:24:53.6234|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:24:53.6560|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "PutClose", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.PutClose (WebApi) 
+2020-11-24 16:24:53.7069|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.PutClose (WebApi) with arguments (357, DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 16:24:54.4865|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.PutClose (WebApi), returned result Microsoft.AspNetCore.Mvc.OkResult in 776.3918ms. 
+2020-11-24 16:24:54.4955|1|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200 
+2020-11-24 16:24:54.4955|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.PutClose (WebApi) in 841.3285ms 
+2020-11-24 16:24:54.4955|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:24:54.4955|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 927.3721ms 200  
+2020-11-24 16:25:48.5740|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44390/orders application/json 910 
+2020-11-24 16:25:48.5740|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 16:25:48.5740|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 16:25:48.5740|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Post", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.Post (WebApi) 
+2020-11-24 16:25:48.6008|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.Post (WebApi) with arguments (DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 16:25:49.1812|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 579.8428ms. 
+2020-11-24 16:25:49.1812|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Int64'. 
+2020-11-24 16:25:49.1812|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.Post (WebApi) in 605.2217ms 
+2020-11-24 16:25:49.1812|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.Post (WebApi)' 
+2020-11-24 16:25:49.1812|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 617.0994ms 200 application/json; charset=utf-8 
+2020-11-24 16:26:00.2238|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:44390/orders/close/364 application/json 913 
+2020-11-24 16:26:00.2238|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 16:26:00.2238|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:26:00.2261|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "PutClose", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.PutClose (WebApi) 
+2020-11-24 16:26:00.2261|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.PutClose (WebApi) with arguments (364, DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 16:26:00.2261|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.PutClose (WebApi), returned result Microsoft.AspNetCore.Mvc.BadRequestResult in 0.0857ms. 
+2020-11-24 16:26:00.2261|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'. 
+2020-11-24 16:26:00.2261|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.PutClose (WebApi) in 11.8446ms 
+2020-11-24 16:26:00.2261|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:26:00.2261|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 15.9701ms 400 application/problem+json; charset=utf-8 
+2020-11-24 16:26:17.7491|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:44390/orders/close/364 application/json 913 
+2020-11-24 16:26:17.7491|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 16:26:17.7491|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:26:17.7573|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "PutClose", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.PutClose (WebApi) 
+2020-11-24 16:26:17.7573|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.PutClose (WebApi) with arguments (364, DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 16:26:18.5233|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.PutClose (WebApi), returned result Microsoft.AspNetCore.Mvc.OkResult in 764.9951ms. 
+2020-11-24 16:26:18.5233|1|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200 
+2020-11-24 16:26:18.5233|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.PutClose (WebApi) in 766.8639ms 
+2020-11-24 16:26:18.5233|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:26:18.5233|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 775.9667ms 200  
+2020-11-24 16:29:51.4822|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:44390/orders/close/364 application/json 921 
+2020-11-24 16:29:51.4822|2|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2020-11-24 16:29:51.4822|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:29:51.4822|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "PutClose", controller = "Orders"}. Executing action WebApi.Controllers.OrdersController.PutClose (WebApi) 
+2020-11-24 16:29:51.4822|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApi.Controllers.OrdersController.PutClose (WebApi) with arguments (364, DAL.Models.OrderMaster) - Validation state: Valid 
+2020-11-24 16:29:55.2041|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApi.Controllers.OrdersController.PutClose (WebApi), returned result Microsoft.AspNetCore.Mvc.OkResult in 3713.247ms. 
+2020-11-24 16:29:55.2041|1|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200 
+2020-11-24 16:29:55.2041|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApi.Controllers.OrdersController.PutClose (WebApi) in 3716.0238ms 
+2020-11-24 16:29:55.2041|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApi.Controllers.OrdersController.PutClose (WebApi)' 
+2020-11-24 16:29:55.2041|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3727.1612ms 200  

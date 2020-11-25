@@ -11,6 +11,7 @@ namespace WebApi.IServices
         Task<IEnumerable<OrderMaster>> GetAllOrderMastersAsync(int companyId,int userId);
         Task<OrderMaster> GetOrderMasterAsync(long orderId);
         Task<long> AddOrderMasterAsync(OrderMaster order);
+        Task CloseOrderMasterAsync(OrderMaster order);
         Task UpdateOrderMasterAsync(OrderMaster order);
         Task DeleteOrderMasterAsync(long orderId);
         Task UpdateOrderAsync(int id, string path);

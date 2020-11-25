@@ -14,6 +14,7 @@ namespace DAL.IRepository
         Task<OrderMaster> GetOrderMasterAsync(long orderId);
         Task<OrderMaster> GetOrderMasterAsync(long orderId, SqlConnection conn, SqlTransaction transaction);
         Task<long> AddOrderMasterAsync(OrderMaster order);
+        Task CloseOrderMasterAsync(OrderMaster order);
         Task UpdateOrderMasterAsync(OrderMaster order);
         Task DeleteOrderMasterAsync(long orderId);
         Task UpdateOrderAsync(int id, string path);

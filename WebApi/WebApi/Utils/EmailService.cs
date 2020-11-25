@@ -17,28 +17,56 @@ namespace WebApi.Utils
         {
             this.appSettings = appSettings;
         }
-        public void SendAcknoledgePOEmail(string companyName,string supplierName,string contactPersonName,string link,string pono)
+        public void SendAcknoledgePOEmail(string companyEmail,string supplierEmail,string pono)
         {            
             string EmailBody = "";
             string EmailIDList = "";
             string EmailSubject="PO generated: " + pono;            
             
 
-            EmailBody = "Hi " + contactPersonName + "<br>";
+            EmailBody = "Hi "  + "<br>";
 
             EmailBody = EmailBody + "A new PO has been raised. Or there is a change in existing PO " + "<br>";
 
-            EmailBody = EmailBody + "Kindly acknowledge the PO by clicking on Acknowledge PO button from following link." + "<br>";
+            //EmailBody = EmailBody + "Kindly acknowledge the PO by clicking on Acknowledge PO button from following link." + "<br>";
 
-            EmailBody = EmailBody + "<div>  <a href = " + link + " style = \"background-color:#31b59f;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:18px;font-weight:bold;line-height:65px;text-align:center;text-decoration:none;width:250px;min-width:250px;font-size:20px\" target = \"_blank\"  > Acknowledge PO </ a > </div>";
+           //ss EmailBody = EmailBody + "<div>  <a href = " + link + " style = \"background-color:#31b59f;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:18px;font-weight:bold;line-height:65px;text-align:center;text-decoration:none;width:250px;min-width:250px;font-size:20px\" target = \"_blank\"  > Acknowledge PO </ a > </div>";
 
             //EmailBody = EmailBody + link + "<br>";
             EmailBody = EmailBody + "<br>" + "Warm Regards,";
             EmailBody = EmailBody + "<br>" + "customer Care";
 
-            EmailBody = EmailBody + "<br>" + companyName;
+            //EmailBody = EmailBody + "<br>" + companyName;
 
-            EmailIDList = appSettings.To;
+            EmailIDList = companyEmail + "," + supplierEmail;
+            string[] stringArray = EmailIDList.Split(',');
+
+
+            SendEmail(EmailIDList, EmailSubject, EmailBody);
+        }
+
+        public void SendClosePOEmail(string companyEmail, string supplierEmail, string pono)
+        {
+            string EmailBody = "";
+            string EmailIDList = "";
+            string EmailSubject = "PO closed: " + pono;
+
+
+            EmailBody = "Hi " + "<br>";
+
+            EmailBody = EmailBody + "A PO has been delevered. " + "<br>";
+
+            //EmailBody = EmailBody + "Kindly acknowledge the PO by clicking on Acknowledge PO button from following link." + "<br>";
+
+            //ss EmailBody = EmailBody + "<div>  <a href = " + link + " style = \"background-color:#31b59f;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:18px;font-weight:bold;line-height:65px;text-align:center;text-decoration:none;width:250px;min-width:250px;font-size:20px\" target = \"_blank\"  > Acknowledge PO </ a > </div>";
+
+            //EmailBody = EmailBody + link + "<br>";
+            EmailBody = EmailBody + "<br>" + "Warm Regards,";
+            EmailBody = EmailBody + "<br>" + "customer Care";
+
+            //EmailBody = EmailBody + "<br>" + companyName;
+
+            EmailIDList = companyEmail + "," + supplierEmail;
             string[] stringArray = EmailIDList.Split(',');
 
 
@@ -108,7 +136,7 @@ namespace WebApi.Utils
                     {
                         //Configuration config = WebConfigurationManager.OpenWebConfiguration(HttpContext.Current.Request.ApplicationPath);
                         client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        client.EnableSsl = true;
+                        client.EnableSsl = false;
                         client.Host = appSettings.Host;
                         client.Port = Convert.ToInt32(appSettings.Port);
                         System.Net.NetworkCredential credentials = new System.Net.NetworkCredential(appSettings.UserName, appSettings.Password);

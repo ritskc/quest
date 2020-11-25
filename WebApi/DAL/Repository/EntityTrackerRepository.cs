@@ -99,6 +99,10 @@ namespace DAL.Repository
             {
                 finYear = DateTimeUtil.GetIndianFinancialYear(dateTime);
             }
+            else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_ORDER.ToLower())
+            {
+                finYear = DateTimeUtil.GetUSAFinancialYear(dateTime);
+            }
             else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_PACKING_SLIP.ToLower())
             {
                 finYear = DateTimeUtil.GetUSAFinancialYear(dateTime);
@@ -199,6 +203,10 @@ namespace DAL.Repository
             {
                 finYear = DateTimeUtil.GetIndianFinancialYear(dateTime);
             }
+            else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_ORDER.ToLower())
+            {
+                finYear = DateTimeUtil.GetUSAFinancialYear(dateTime);
+            }
             else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_PACKING_SLIP.ToLower())
             {
                 finYear = DateTimeUtil.GetUSAFinancialYear(dateTime);
@@ -245,6 +253,12 @@ namespace DAL.Repository
                         entityTracker.Entity = entity;
                         entityTracker.EntityNo = entityTracker.FinYear + "-" + Convert.ToInt32(dataReader["AvailableNo"]);
                     }
+                    else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_ORDER.ToLower())
+                    {
+                        entity = BusinessConstants.ENTITY_TRACKER_ORDER;
+                        entityTracker.Entity = entity;
+                        entityTracker.EntityNo = entityTracker.FinYear + "-" + Convert.ToInt32(dataReader["AvailableNo"]);
+                    }
                     else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_PACKING_SLIP.ToLower())
                     {
                         entity = BusinessConstants.ENTITY_TRACKER_PACKING_SLIP;
@@ -278,6 +292,11 @@ namespace DAL.Repository
             {
                 entity = BusinessConstants.ENTITY_TRACKER_PO;
                 finYear = DateTimeUtil.GetIndianFinancialYear(dateTime);
+            }
+            else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_ORDER.ToLower())
+            {
+                entity = BusinessConstants.ENTITY_TRACKER_ORDER;
+                finYear = DateTimeUtil.GetUSAFinancialYear(dateTime);
             }
             else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_PACKING_SLIP.ToLower())
             {
@@ -342,6 +361,11 @@ namespace DAL.Repository
             {
                 entity = BusinessConstants.ENTITY_TRACKER_PO;
                 finYear = DateTimeUtil.GetIndianFinancialYear(dateTime);
+            }
+            else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_ORDER.ToLower())
+            {
+                entity = BusinessConstants.ENTITY_TRACKER_ORDER;
+                finYear = DateTimeUtil.GetUSAFinancialYear(dateTime);
             }
             else if (entity.ToLower() == BusinessConstants.ENTITY_TRACKER_PACKING_SLIP.ToLower())
             {
